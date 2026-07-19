@@ -2,7 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons";
-import { contact } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 
 const socialIcons = {
   linkedin: LinkedinIcon,
@@ -11,6 +11,7 @@ const socialIcons = {
 } as const;
 
 export function ContactSection() {
+  const { contact } = useContent();
   const marqueeItems = Array.from({ length: 10 }, () => contact.marquee);
 
   return (

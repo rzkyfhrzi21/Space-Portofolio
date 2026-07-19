@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { educations, certifications } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 
 export function EducationSection() {
+  const { education } = useContent();
   return (
     <section
       id="education"
@@ -12,16 +13,16 @@ export function EducationSection() {
     >
       <div className="flex items-center justify-between">
         <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-accent">
-          Pendidikan &amp; Sertifikasi
+          {education.eyebrow}
         </span>
         <button className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted transition-colors hover:text-text">
-          Lihat semua
+          {education.viewAll}
           <ArrowUpRight className="size-3.5" />
         </button>
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-        {educations.map((edu) => (
+        {education.items.map((edu) => (
           <motion.div
             key={edu.degree}
             initial={{ opacity: 0, y: 24 }}
@@ -49,7 +50,7 @@ export function EducationSection() {
         ))}
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {certifications.map((cert, i) => (
+          {education.certifications.map((cert, i) => (
             <motion.div
               key={cert.title}
               initial={{ opacity: 0, y: 24 }}

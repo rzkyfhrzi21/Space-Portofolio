@@ -2,12 +2,13 @@
 
 import { useState, type FormEvent } from "react";
 import { Send, Sparkles } from "lucide-react";
-import { aiTwin } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { sendMessage, receiveMessage, setInput } from "@/store/chatSlice";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export function AiTwinSection() {
+  const { aiTwin } = useContent();
   const dispatch = useAppDispatch();
   const messages = useAppSelector((s) => s.chat.messages);
   const input = useAppSelector((s) => s.chat.input);
@@ -20,11 +21,7 @@ export function AiTwinSection() {
     dispatch(sendMessage(text));
     setPending(true);
     window.setTimeout(() => {
-      dispatch(
-        receiveMessage(
-          "Terima kasih atas pertanyaannya! Ini demo AI Twin. Di situs asli, jawaban dihasilkan dari sistem RAG berbasis pengalaman dan proyek Aditya.",
-        ),
-      );
+      dispatch(receiveMessage(aiTwin.demoResponse));
       setPending(false);
     }, 900);
   };
@@ -62,9 +59,9 @@ export function AiTwinSection() {
               <span className="absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-surface bg-emerald-400" />
             </span>
             <div>
-              <p className="text-sm font-semibold text-text">AI Twin Aditya</p>
+              <p className="text-sm font-semibold text-text">{aiTwin.chatName}</p>
               <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-emerald-400">
-                Online
+                {aiTwin.online}
               </p>
             </div>
           </div>
@@ -98,12 +95,12 @@ export function AiTwinSection() {
             <input
               value={input}
               onChange={(e) => dispatch(setInput(e.target.value))}
-              placeholder="Tanyakan sesuatu..."
+              placeholder={aiTwin.placeholder}
               className="flex-1 rounded-full border border-stroke bg-bg px-4 py-2.5 text-sm text-text outline-none placeholder:text-faint focus:border-accent/50"
             />
             <button
               type="submit"
-              aria-label="Kirim"
+              aria-label={aiTwin.send}
               className="flex size-10 shrink-0 items-center justify-center rounded-full bg-accent text-bg transition-transform hover:scale-105 disabled:opacity-50"
               disabled={pending}
             >

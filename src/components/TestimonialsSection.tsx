@@ -1,15 +1,12 @@
 "use client";
 
-import { testimonials } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SectionHeading } from "@/components/SectionHeading";
 
-const relationLabel: Record<string, string> = {
-  "PT Sigma Cipta Caraka (Telkomsigma)": "Colleague",
-  "Owner Ecoprint Purbalingga": "Client",
-};
-
 export function TestimonialsSection() {
-  const loop = [...testimonials, ...testimonials];
+  const { testimonials } = useContent();
+  const relationLabel = testimonials.relationLabels;
+  const loop = [...testimonials.items, ...testimonials.items];
 
   return (
     <section
@@ -17,7 +14,9 @@ export function TestimonialsSection() {
       className="relative z-10 w-full overflow-hidden bg-bg py-14 md:py-20"
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-        <SectionHeading eyebrow="TESTIMONI">Apa kata mereka.</SectionHeading>
+        <SectionHeading eyebrow={testimonials.eyebrow}>
+          {testimonials.heading}
+        </SectionHeading>
       </div>
 
       <div className="relative mt-12">

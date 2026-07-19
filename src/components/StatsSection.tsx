@@ -1,6 +1,9 @@
-import { stats } from "@/lib/content";
+"use client";
+
+import { useContent } from "@/hooks/useContent";
 
 export function StatsSection() {
+  const { stats } = useContent();
   return (
     <section className="border-y border-stroke bg-bg py-16 md:py-24">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-6 text-center md:grid-cols-3 md:px-10">

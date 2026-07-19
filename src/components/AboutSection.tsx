@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { about } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export function AboutSection() {
+  const { about } = useContent();
   return (
     <section id="about" className="bg-bg py-20 md:py-32">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">

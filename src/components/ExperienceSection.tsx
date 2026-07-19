@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { experiences } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export function ExperienceSection() {
+  const { experience } = useContent();
   return (
     <section
       id="experience"
@@ -12,21 +13,21 @@ export function ExperienceSection() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading eyebrow="PENGALAMAN SAYA">
-            Riwayat kerja.
+          <SectionHeading eyebrow={experience.eyebrow}>
+            {experience.heading}
           </SectionHeading>
           <div className="max-w-md md:text-right">
             <p className="text-sm text-muted md:text-base">
-              Perusahaan dan peran yang membentuk perjalanan engineering saya.
+              {experience.description}
             </p>
             <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-faint">
-              3 Peran · 3+ Tahun
+              {experience.meta}
             </p>
           </div>
         </div>
 
         <div className="mt-14 space-y-0">
-          {experiences.map((exp) => (
+          {experience.items.map((exp) => (
             <motion.div
               key={exp.company}
               initial={{ opacity: 0, y: 30 }}
@@ -44,7 +45,7 @@ export function ExperienceSection() {
                 {exp.current && (
                   <span className="flex w-fit items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-text">
                     <span className="size-1.5 animate-pulse-dot rounded-full bg-accent" />
-                    Saat ini
+                    {experience.current}
                   </span>
                 )}
               </div>

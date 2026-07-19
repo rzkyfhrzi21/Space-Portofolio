@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { Menu, X, Download, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { navLinks, resumeHref } from "@/lib/content";
+import { resumeHref, locales } from "@/lib/content";
+import { useContent, useLocale } from "@/hooks/useContent";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   setScrolled,
@@ -15,6 +16,8 @@ import {
 
 export function Navbar() {
   const dispatch = useAppDispatch();
+  const content = useContent();
+  const { locale, setLocale } = useLocale();
   const scrolled = useAppSelector((s) => s.ui.scrolled);
   const activeSection = useAppSelector((s) => s.ui.activeSection);
   const mobileMenuOpen = useAppSelector((s) => s.ui.mobileMenuOpen);
@@ -61,7 +64,7 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => {
+          {content.nav.links.map((link) => {
             const id = link.href.replace("#", "");
             const active = activeSection === id;
             return (
@@ -84,17 +87,29 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <div className="hidden items-center rounded-full border border-stroke bg-surface/60 p-0.5 text-[11px] font-semibold sm:flex">
-            <span className="rounded-full px-2.5 py-1 text-muted">EN</span>
-            <span className="rounded-full bg-surface-2 px-2.5 py-1 text-text">
-              ID
-            </span>
+            {locales.map((lng) => (
+              <button
+                key={lng}
+                type="button"
+                onClick={() => setLocale(lng)}
+                aria-pressed={locale === lng}
+                className={cn(
+                  "rounded-full px-2.5 py-1 uppercase transition-colors",
+                  locale === lng
+                    ? "bg-surface-2 text-text"
+                    : "text-muted hover:text-text",
+                )}
+              >
+                {lng}
+              </button>
+            ))}
           </div>
 
           <Link
             href="#contact"
             className="hidden items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-text transition-colors hover:bg-accent/20 sm:flex"
           >
-            Hubungi Saya
+            {content.nav.hireMe}
             <ArrowUpRight className="size-3.5" />
           </Link>
 
@@ -103,7 +118,7 @@ export function Navbar() {
             className="hidden items-center gap-1.5 rounded-full border border-stroke px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-muted transition-colors hover:text-text md:flex"
           >
             <Download className="size-3.5" />
-            Resume
+            {content.nav.resume}
           </a>
 
           <button
@@ -124,7 +139,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <div className="pointer-events-auto fixed inset-0 top-0 z-40 flex flex-col bg-bg/95 px-6 pt-28 backdrop-blur-xl lg:hidden">
           <div className="flex flex-col gap-2">
-            {navLinks.map((link) => (
+            {content.nav.links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -134,12 +149,30 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-4 flex items-center gap-2">
+              {locales.map((lng) => (
+                <button
+                  key={lng}
+                  type="button"
+                  onClick={() => setLocale(lng)}
+                  aria-pressed={locale === lng}
+                  className={cn(
+                    "flex-1 rounded-full border py-3 text-sm font-semibold uppercase tracking-[0.12em] transition-colors",
+                    locale === lng
+                      ? "border-accent/40 bg-accent/10 text-text"
+                      : "border-stroke text-muted",
+                  )}
+                >
+                  {lng}
+                </button>
+              ))}
+            </div>
             <a
               href={resumeHref}
-              className="mt-4 flex items-center justify-center gap-2 rounded-full border border-stroke py-4 text-sm font-semibold uppercase tracking-[0.12em] text-text"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full border border-stroke py-4 text-sm font-semibold uppercase tracking-[0.12em] text-text"
             >
               <Download className="size-4" />
-              Resume
+              {content.nav.resume}
             </a>
           </div>
         </div>

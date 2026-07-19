@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geist = Geist({
   variable: "--font-geist",
@@ -76,6 +78,8 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-bg text-text">
         <Providers>{children}</Providers>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

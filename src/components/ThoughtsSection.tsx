@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { articles } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 
 export function ThoughtsSection() {
+  const { thoughts } = useContent();
   return (
     <section id="thoughts" className="bg-bg py-16 md:py-24">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
@@ -20,15 +21,17 @@ export function ThoughtsSection() {
             <div className="mb-6 flex items-center gap-4">
               <div className="h-px w-8 bg-white/10" />
               <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-muted">
-                Jurnal
+                {thoughts.eyebrow}
               </span>
             </div>
             <h2 className="mb-4 text-4xl leading-none tracking-tight text-text md:text-5xl lg:text-[4rem]">
-              Catatan{" "}
-              <span className="font-display italic text-muted">terbaru</span>
+              {thoughts.headingLead}{" "}
+              <span className="font-display italic text-muted">
+                {thoughts.headingAccent}
+              </span>
             </h2>
             <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-muted">
-              Catatan dan pemikiran tentang teknologi dan kehidupan.
+              {thoughts.description}
             </p>
           </div>
 
@@ -38,14 +41,14 @@ export function ThoughtsSection() {
           >
             <span className="absolute inset-0 rounded-full bg-white/10 transition-all duration-300 group-hover:accent-gradient" />
             <span className="relative flex items-center justify-center gap-2 rounded-full bg-bg px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-text md:px-8 md:py-3.5 md:text-[11px]">
-              Lihat semua tulisan
+              {thoughts.viewAll}
               <ArrowRight className="h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
         </motion.div>
 
         <div className="flex flex-col gap-4">
-          {articles.map((article, i) => (
+          {thoughts.items.map((article, i) => (
             <motion.div
               key={article.title}
               initial={{ opacity: 0, y: 16 }}

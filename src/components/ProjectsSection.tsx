@@ -4,34 +4,34 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export function ProjectsSection() {
+  const { projects } = useContent();
   return (
     <section id="projects" className="bg-bg py-12 md:py-16">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading eyebrow="KARYA PILIHAN">
-            Proyek unggulan
+          <SectionHeading eyebrow={projects.eyebrow}>
+            {projects.heading}
           </SectionHeading>
           <div className="max-w-md md:text-right">
             <p className="text-sm text-muted md:text-base">
-              Pilihan proyek yang pernah saya kerjakan, dari konsep hingga
-              peluncuran.
+              {projects.description}
             </p>
             <Link
               href="#projects"
               className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-text transition-colors hover:text-accent"
             >
-              Lihat semua karya
+              {projects.viewAll}
               <ArrowUpRight className="size-3.5" />
             </Link>
           </div>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {projects.map((project, i) => (
+          {projects.items.map((project, i) => (
             <motion.article
               key={project.slug}
               initial={{ opacity: 0, y: 32 }}

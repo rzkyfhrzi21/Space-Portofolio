@@ -5,12 +5,14 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
-import { techCategories, aiCapabilities } from "@/lib/content";
+import { githubHref } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SectionHeading } from "@/components/SectionHeading";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function TechStackSection() {
+  const { tech } = useContent();
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -60,24 +62,26 @@ export function TechStackSection() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeading eyebrow="KAPABILITAS">Tech &amp; AI stack.</SectionHeading>
+          <SectionHeading eyebrow={tech.eyebrow}>{tech.heading}</SectionHeading>
           <a
-            href="https://github.com/"
+            href={githubHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group inline-flex w-fit items-center gap-2 rounded-full border border-stroke px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-muted transition-colors hover:text-text"
           >
-            Lihat di GitHub
+            {tech.viewOnGithub}
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
         <p className="mt-4 max-w-xl text-base text-muted md:text-lg">
-          Teknologi dan sistem AI yang saya gunakan untuk membangun produk.
+          {tech.description}
         </p>
 
         <div
           data-tech-grid
           className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3"
         >
-          {techCategories.map((cat) => (
+          {tech.categories.map((cat) => (
             <div
               key={cat.label}
               data-tech-card
@@ -114,7 +118,7 @@ export function TechStackSection() {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {aiCapabilities.map((cap) => (
+          {tech.capabilities.map((cap) => (
             <div
               key={cap.title}
               data-tech-card

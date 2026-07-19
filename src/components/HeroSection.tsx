@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { hero } from "@/lib/content";
+import { useContent } from "@/hooks/useContent";
 import { SpaceBackground } from "@/components/SpaceBackground";
 
 export function HeroSection() {
+  const { hero } = useContent();
   const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
@@ -13,7 +14,7 @@ export function HeroSection() {
       setRoleIndex((prev) => (prev + 1) % hero.roles.length);
     }, 2600);
     return () => clearInterval(id);
-  }, []);
+  }, [hero.roles.length]);
 
   return (
     <section

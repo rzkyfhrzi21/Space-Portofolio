@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 import { content, defaultContent, locales, type Locale } from "@/lib/content";
 
@@ -13,18 +13,29 @@ function normalize(lng: string | undefined): Locale {
 
 export function useLocale() {
   const { i18n } = useTranslation();
-  const [locale, setLocaleState] = useState<Locale>(() =>
-    normalize(i18n.resolvedLanguage ?? i18n.language),
+
+  const subscribe = useCallback(
+    (onChange: () => void) => {
+      i18n.on("languageChanged", onChange);
+      return () => {
+        i18n.off("languageChanged", onChange);
+      };
+    },
+    [i18n],
   );
 
-  useEffect(() => {
-    const handler = (lng: string) => setLocaleState(normalize(lng));
-    i18n.on("languageChanged", handler);
-    setLocaleState(normalize(i18n.resolvedLanguage ?? i18n.language));
-    return () => {
-      i18n.off("languageChanged", handler);
-    };
-  }, [i18n]);
+  const getSnapshot = useCallback(
+    (): Locale => normalize(i18n.resolvedLanguage ?? i18n.language),
+    [i18n],
+  );
+
+  const getServerSnapshot = useCallback((): Locale => "id", []);
+
+  const locale = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
 
   useEffect(() => {
     if (typeof document !== "undefined") {
