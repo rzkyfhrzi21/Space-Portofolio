@@ -43,6 +43,7 @@ export interface Article {
   category: string;
   readingTime: string;
   date: string;
+  href?: string;
 }
 
 export interface TechItem {

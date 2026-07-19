@@ -1,92 +1,104 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { hero } from "@/lib/content";
 import { SpaceBackground } from "@/components/SpaceBackground";
 
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export function HeroSection() {
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % hero.roles.length);
+    }, 2600);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden px-6 pb-24 pt-28 text-center"
+      className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden md:min-h-[100dvh]"
     >
       <SpaceBackground />
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-10 flex max-w-4xl flex-col items-center"
-      >
-        <motion.span
-          variants={item}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-stroke bg-black/40 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted backdrop-blur-sm"
+      <div className="relative z-10 mt-20 flex flex-col items-center px-6 pb-28 text-center md:pb-32">
+        <p
+          className="blur-in mb-8 text-[10px] font-semibold uppercase tracking-[0.4em] text-white/50"
+          style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
         >
-          <span className="size-1.5 rounded-full bg-accent" />
           {hero.eyebrow}
-        </motion.span>
+        </p>
 
-        <motion.h1
-          variants={item}
-          className="font-heading text-[15vw] font-medium leading-[0.95] tracking-tight text-text sm:text-7xl md:text-8xl lg:text-[8.5rem]"
+        <h1
+          className="name-reveal mb-8 font-display text-6xl italic leading-[0.85] tracking-tight text-text md:text-8xl lg:text-[9rem]"
+          style={{
+            textShadow:
+              "0 2px 40px rgba(0,0,0,0.6), 0 0 80px rgba(0,0,0,0.3)",
+          }}
         >
           {hero.name}
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          variants={item}
-          className="mt-7 max-w-xl text-balance text-base leading-relaxed text-muted md:text-lg"
+        <div className="blur-in mb-10 inline-flex items-center gap-2 rounded-full border border-white/8 bg-black/20 px-5 py-2 backdrop-blur-sm">
+          <span className="text-lg font-medium text-white/60 md:text-2xl">
+            {hero.rolePrefix}
+          </span>
+          <span
+            key={roleIndex}
+            className="inline-block min-w-[10ch] animate-role-fade-in text-center font-display text-lg font-medium italic text-text md:min-w-[11ch] md:text-2xl"
+          >
+            {hero.roles[roleIndex]}
+          </span>
+          <span className="text-lg font-medium text-white/60 md:text-2xl">
+            {hero.roleSuffix}
+          </span>
+        </div>
+
+        <p
+          className="blur-in mb-12 max-w-md text-sm leading-relaxed text-white/55"
+          style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
         >
           {hero.description}
-        </motion.p>
+        </p>
 
-        <motion.div
-          variants={item}
-          className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
-        >
+        <div className="blur-in mb-6 inline-flex items-center gap-4">
           <Link
             href={hero.primaryCta.href}
-            className="group flex items-center gap-2 rounded-full bg-text px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-bg transition-transform hover:scale-[1.03]"
+            className="group relative inline-flex rounded-full transition-transform hover:scale-105"
           >
-            {hero.primaryCta.label}
-            <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span className="relative inline-flex rounded-full bg-white/90 px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-bg backdrop-blur-md transition-all group-hover:bg-white">
+              {hero.primaryCta.label}
+            </span>
           </Link>
           <Link
             href={hero.secondaryCta.href}
-            className="flex items-center gap-2 rounded-full border border-stroke bg-black/30 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-text backdrop-blur-sm transition-colors hover:border-accent/50"
+            className="group relative inline-flex rounded-full p-[2px] transition-transform hover:scale-105"
           >
-            {hero.secondaryCta.label}
+            <span className="absolute inset-0 rounded-full border border-white/25 transition-all duration-300 group-hover:border-transparent" />
+            <span
+              className="absolute inset-0 rounded-full opacity-0 accent-gradient transition-opacity duration-300 group-hover:opacity-100"
+              style={{ padding: "1px" }}
+            />
+            <span className="relative inline-flex rounded-full bg-black/30 px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
+              {hero.secondaryCta.label}
+            </span>
           </Link>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-muted"
+      <Link
+        href="#about"
+        className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3 text-center transition-opacity hover:opacity-80 md:bottom-8"
+        aria-label="Scroll to about section"
       >
-        <ArrowDown className="size-4 animate-bounce" />
-        Gulir
-      </motion.div>
+        <span className="text-[9px] uppercase tracking-[0.3em] text-muted">
+          Gulir
+        </span>
+        <div className="relative h-12 w-px overflow-hidden bg-white/10">
+          <div className="absolute left-0 top-0 h-1/2 w-full animate-scroll-down bg-gradient-to-b from-transparent via-[#89AACC] to-transparent" />
+        </div>
+      </Link>
     </section>
   );
 }

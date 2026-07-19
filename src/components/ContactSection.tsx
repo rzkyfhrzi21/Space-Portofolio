@@ -1,7 +1,14 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons";
 import { contact } from "@/lib/content";
+
+const socialIcons = {
+  linkedin: LinkedinIcon,
+  github: GithubIcon,
+  instagram: InstagramIcon,
+} as const;
 
 export function ContactSection() {
   const marqueeItems = Array.from({ length: 10 }, () => contact.marquee);
@@ -9,61 +16,98 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative flex min-h-[80vh] flex-col items-center justify-between overflow-hidden bg-bg pt-16"
+      className="relative flex min-h-[80vh] flex-col items-center justify-between overflow-hidden bg-bg pb-8 pt-16 md:pb-12 md:pt-20"
     >
-      <div className="w-full border-y border-stroke py-5">
-        <div className="flex w-max animate-marquee gap-6 whitespace-nowrap [--marquee-duration:40s]">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/25" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 0%, rgba(0,0,0,0.45) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 45% at 50% 48%, rgba(0,0,0,0.25) 0%, transparent 70%)",
+          }}
+        />
+        <div className="absolute left-0 right-0 top-0 h-48 bg-gradient-to-b from-bg to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg to-transparent" />
+      </div>
+
+      <div className="relative z-10 mt-10 w-full overflow-hidden whitespace-nowrap md:mt-20">
+        <div className="contact-marquee-track inline-block">
           {[...marqueeItems, ...marqueeItems].map((text, i) => (
             <span
               key={i}
-              className="font-heading text-xl font-medium uppercase tracking-tight text-muted"
+              className="pr-8 font-display text-8xl italic tracking-tight text-text/10 md:text-[10rem] lg:text-[12rem]"
             >
-              {text} <span className="text-accent">—</span>
+              {text} -
             </span>
           ))}
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col items-center justify-center px-6 py-20 text-center">
-        <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-stroke bg-surface/60 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">
-          <span className="size-1.5 rounded-full bg-accent" />
+      <div className="relative z-10 mb-20 mt-[-10vh] flex flex-col items-center px-6 text-center md:mt-[-20vh]">
+        <div className="mb-8 text-[10px] font-semibold uppercase tracking-[0.4em] text-muted">
           {contact.eyebrow}
-        </span>
+        </div>
 
-        <h2 className="max-w-3xl text-balance font-heading text-4xl font-medium leading-[1.05] tracking-tight text-text md:text-6xl lg:text-7xl">
-          {contact.heading}
+        <h2 className="mb-10 max-w-2xl text-4xl leading-none tracking-tight text-text md:text-5xl lg:text-[5rem]">
+          {contact.headingLead} <br />
+          <span className="font-display italic text-muted">
+            {contact.headingAccent}
+          </span>
         </h2>
 
         <a
-          href="mailto:hello@izaditya.my.id"
-          className="group mt-10 flex items-center gap-2 rounded-full bg-text px-8 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-bg transition-transform hover:scale-[1.03]"
+          href={contact.ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative inline-flex rounded-full p-[2px] transition-transform hover:scale-105"
         >
-          {contact.cta}
-          <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <span className="absolute inset-0 rounded-full bg-white/10 transition-all duration-300 group-hover:accent-gradient" />
+          <span className="relative flex items-center gap-3 rounded-full bg-bg px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-text">
+            {contact.cta}
+            <ArrowUpRight className="h-4 w-4 opacity-70" />
+          </span>
         </a>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-          {contact.socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-muted transition-colors hover:text-text"
-            >
-              {social.label}
-              <ArrowUpRight className="size-3.5" />
-            </a>
-          ))}
-        </div>
       </div>
 
-      <div className="flex w-full flex-col items-center justify-between gap-4 border-t border-stroke px-6 py-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-faint md:flex-row md:px-10">
-        <span className="flex items-center gap-2">
-          <span className="size-1.5 animate-pulse-dot rounded-full bg-emerald-400" />
-          {contact.status}
-        </span>
-        <span>{contact.copyright}</span>
+      <div className="relative z-10 mt-auto flex w-full max-w-[1400px] flex-col items-center gap-8 border-t border-white/5 px-6 pt-8">
+        <div className="flex w-full flex-col items-center justify-between gap-6 md:flex-row">
+          <div className="flex items-center gap-6">
+            {contact.socials.map((social) => {
+              const Icon = socialIcons[social.icon];
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#878787]/50 transition-colors hover:text-text"
+                >
+                  <Icon className="h-4 w-4" />
+                  <span className="hidden sm:inline">{social.label}</span>
+                </a>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-500/80" />
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#878787]/50">
+              {contact.status}
+            </span>
+          </div>
+        </div>
+
+        <div className="text-[10px] font-medium uppercase tracking-widest text-[#878787]/40">
+          {contact.copyright}
+        </div>
       </div>
     </section>
   );

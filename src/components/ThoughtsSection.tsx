@@ -1,54 +1,80 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { articles } from "@/lib/content";
-import { SectionHeading } from "@/components/SectionHeading";
 
 export function ThoughtsSection() {
   return (
     <section id="thoughts" className="bg-bg py-16 md:py-24">
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <SectionHeading eyebrow="Jurnal" description="Catatan dan pemikiran tentang teknologi dan kehidupan.">
-            Catatan terbaru
-          </SectionHeading>
-          <button className="flex w-fit items-center gap-1.5 rounded-full border border-stroke px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted transition-colors hover:text-text">
-            Lihat semua tulisan
-            <ArrowUpRight className="size-3.5" />
-          </button>
-        </div>
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-12 flex flex-col justify-between gap-8 md:mb-16 md:flex-row md:items-end"
+        >
+          <div className="max-w-xl">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="h-px w-8 bg-white/10" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-muted">
+                Jurnal
+              </span>
+            </div>
+            <h2 className="mb-4 text-4xl leading-none tracking-tight text-text md:text-5xl lg:text-[4rem]">
+              Catatan{" "}
+              <span className="font-display italic text-muted">terbaru</span>
+            </h2>
+            <p className="mt-4 max-w-sm text-[13px] leading-relaxed text-muted">
+              Catatan dan pemikiran tentang teknologi dan kehidupan.
+            </p>
+          </div>
 
-        <div className="mt-12 divide-y divide-stroke border-y border-stroke">
+          <Link
+            href="/blog"
+            className="group relative inline-flex shrink-0 rounded-full p-[2px] transition-transform hover:scale-105"
+          >
+            <span className="absolute inset-0 rounded-full bg-white/10 transition-all duration-300 group-hover:accent-gradient" />
+            <span className="relative flex items-center justify-center gap-2 rounded-full bg-bg px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-text md:px-8 md:py-3.5 md:text-[11px]">
+              Lihat semua tulisan
+              <ArrowRight className="h-4 w-4 opacity-70 transition-transform group-hover:translate-x-1" />
+            </span>
+          </Link>
+        </motion.div>
+
+        <div className="flex flex-col gap-4">
           {articles.map((article, i) => (
-            <motion.a
+            <motion.div
               key={article.title}
-              href="#thoughts"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group flex flex-col gap-3 py-7 md:flex-row md:items-center md:justify-between md:gap-10"
             >
-              <div className="flex-1">
-                <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.16em]">
-                  <span className="text-accent">{article.category}</span>
-                  <span className="size-1 rounded-full bg-faint" />
-                  <span className="text-muted">{article.readingTime}</span>
+              <Link
+                href={article.href ?? "#thoughts"}
+                className="group flex flex-row items-center gap-3 rounded-[32px] border border-stroke bg-surface/30 p-3 transition-colors duration-300 hover:bg-surface sm:gap-6 sm:rounded-full sm:px-6 sm:py-5"
+              >
+                <div className="flex-1 px-4 sm:px-2">
+                  <h3 className="mb-3 text-sm font-medium text-text transition-colors group-hover:text-white sm:mb-2 sm:text-lg md:text-xl">
+                    {article.title}
+                  </h3>
+                  <div className="flex flex-wrap items-center gap-3 text-xs text-muted sm:gap-4 sm:text-sm">
+                    <span className="rounded-full border border-stroke bg-surface/30 px-2.5 py-1 text-[9px] text-muted">
+                      {article.category}
+                    </span>
+                    <span>{article.readingTime}</span>
+                    <span className="hidden h-1 w-1 rounded-full bg-stroke sm:block" />
+                    <span>{article.date}</span>
+                  </div>
                 </div>
-                <h3 className="mt-3 max-w-2xl font-heading text-xl font-semibold leading-snug tracking-tight text-text transition-colors group-hover:text-accent md:text-2xl">
-                  {article.title}
-                </h3>
-              </div>
-              <div className="flex items-center gap-5">
-                <span className="font-mono text-xs text-muted">
-                  {article.date}
-                </span>
-                <span className="flex size-11 shrink-0 items-center justify-center rounded-full border border-stroke text-muted transition-all group-hover:border-accent/50 group-hover:text-text">
-                  <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </div>
-            </motion.a>
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center self-center rounded-full border border-stroke transition-all group-hover:border-transparent group-hover:bg-text group-hover:text-bg sm:mr-2 sm:h-12 sm:w-12">
+                  <ArrowRight className="h-3 w-3 -rotate-45 transition-transform duration-300 group-hover:rotate-0 sm:h-5 sm:w-5" />
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
