@@ -39,7 +39,11 @@ export function MuxVideoBackground({
         const { default: Hls } = await import("hls.js");
         if (cancelled) return;
         if (Hls.isSupported()) {
-          const instance = new Hls({ capLevelToPlayerSize: true });
+          const instance = new Hls({
+            capLevelToPlayerSize: true,
+            enableWorker: true,
+            backBufferLength: 30,
+          });
           hls = instance;
           instance.on(Hls.Events.ERROR, (_event, data) => {
             if (data.fatal) {

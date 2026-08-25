@@ -25,14 +25,14 @@ export function HeroSection() {
 
       <div className="relative z-10 mt-20 flex flex-col items-center px-6 pb-28 text-center md:pb-32">
         <p
-          className="blur-in mb-8 text-[10px] font-semibold uppercase tracking-[0.4em] text-white/50"
-          style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}
+          className="blur-in mb-5 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/75"
+          style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
         >
           {hero.eyebrow}
         </p>
 
         <h1
-          className="name-reveal mb-8 font-display text-6xl italic leading-[0.85] tracking-tight text-text md:text-8xl lg:text-[9rem]"
+          className="name-reveal mb-8 font-display text-6xl italic leading-[0.85] tracking-tight text-text-primary md:text-8xl lg:text-[9rem]"
           style={{
             textShadow:
               "0 2px 40px rgba(0,0,0,0.6), 0 0 80px rgba(0,0,0,0.3)",
@@ -41,24 +41,24 @@ export function HeroSection() {
           {hero.name}
         </h1>
 
-        <div className="blur-in mb-10 inline-flex items-center gap-2 rounded-full border border-white/8 bg-black/20 px-5 py-2 backdrop-blur-sm">
-          <span className="text-lg font-medium text-white/60 md:text-2xl">
+        <div className="blur-in mb-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/35 px-5 py-2 shadow-md backdrop-blur-md">
+          <span className="text-lg font-medium text-white/80 md:text-2xl">
             {hero.rolePrefix}
           </span>
           <span
             key={roleIndex}
-            className="inline-block min-w-[10ch] animate-role-fade-in text-center font-display text-lg font-medium italic text-text md:min-w-[11ch] md:text-2xl"
+            className="inline-block min-w-[10ch] animate-role-fade-in text-center font-display text-lg font-medium italic text-text-primary md:min-w-[11ch] md:text-2xl"
           >
             {hero.roles[roleIndex]}
           </span>
-          <span className="text-lg font-medium text-white/60 md:text-2xl">
+          <span className="text-lg font-medium text-white/80 md:text-2xl">
             {hero.roleSuffix}
           </span>
         </div>
 
         <p
-          className="blur-in mb-12 max-w-md text-sm leading-relaxed text-white/55"
-          style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
+          className="blur-in mb-12 max-w-md text-sm font-medium leading-relaxed text-white/80 md:text-base"
+          style={{ textShadow: "0 2px 12px rgba(0,0,0,0.8)" }}
         >
           {hero.description}
         </p>
@@ -68,7 +68,7 @@ export function HeroSection() {
             href={hero.primaryCta.href}
             className="group relative inline-flex rounded-full transition-transform hover:scale-105"
           >
-            <span className="relative inline-flex rounded-full bg-white/90 px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-bg backdrop-blur-md transition-all group-hover:bg-white">
+            <span className="relative inline-flex rounded-full bg-white/90 px-8 py-3.5 text-[12px] font-bold uppercase tracking-widest text-bg backdrop-blur-md transition-all group-hover:bg-white">
               {hero.primaryCta.label}
             </span>
           </Link>
