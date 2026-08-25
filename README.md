@@ -1,170 +1,102 @@
-# AI Website Cloner Template
+# Space Portofolio
 
-<a href="https://github.com/JCodesMore/ai-website-cloner-template/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a> <a href="https://github.com/JCodesMore/ai-website-cloner-template/stargazers"><img src="https://img.shields.io/github/stars/JCodesMore/ai-website-cloner-template?style=flat" alt="Stars" /></a> <a href="https://discord.gg/hrTSX5yTpB"><img src="https://img.shields.io/discord/1400896964597383279?label=discord" alt="Discord" /></a>
+Portfolio pribadi hasil reverse-engineering dari [izaditya.my.id](https://www.izaditya.my.id) — dibangun ulang dengan Next.js, mendekati 1:1 dengan situs aslinya: mulai dari tipografi, warna, animasi scroll, hingga background video luar angkasa.
 
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. 
+## Fitur
 
-**Recommended: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with Opus 4.8 for best results** — but works with a variety of AI coding agents.
-
-Point it at a URL, run `/clone-website`, and your AI agent will inspect the site, extract design tokens and assets, write component specs, and dispatch parallel builders to reconstruct every section.
-
-## Demo
-
-[![Watch the demo](docs/design-references/comparison.png)](https://youtu.be/O669pVZ_qr0)
-
-> Click the image above to watch the full demo on YouTube.
-
-## Quick Start
-
-> **Important:** Start by making your own copy with GitHub's **Use this template** button. Do not clone this template repository directly for your website project, and do not open pull requests here with your generated website.
-
-1. **Create your own repository from this template**
-
-   On the GitHub page for this project, click **Use this template**, then click **Create a new repository**.
-
-   Give your new repository a name, choose whether it should be public or private, then click **Create repository**. If GitHub shows an **Include all branches** option, you can leave it off.
-
-   This gives you your own separate project to work in, so your website changes stay in your account instead of coming back to the main template.
-
-2. **Open your new repository on your computer**
-
-   After GitHub creates your copy, open that new repository. Click **Code** and open or clone your new repository with your preferred coding tool.
-
-   If you use the terminal, the command will look like this:
-
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/YOUR-NEW-REPOSITORY.git
-   cd YOUR-NEW-REPOSITORY
-   ```
-
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
-4. **Start your AI agent** — Claude Code recommended:
-   ```bash
-   claude --chrome
-   ```
-5. **Run the skill**:
-   ```
-   /clone-website <target-url1> [<target-url2> ...]
-   ```
-6. **Customize** (optional) — after the base clone is built, modify as needed
-
-> Using a different agent? Open `AGENTS.md` for project instructions — most agents pick it up automatically.
-
-## Supported Platforms
-
-| Agent                                                         | Status                     |
-| ------------------------------------------------------------- | -------------------------- |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | **Recommended** — Opus 4.8 |
-| [Codex CLI](https://github.com/openai/codex)                  | Supported                  |
-| [OpenCode](https://opencode.ai/)                              | Supported                  |
-| [GitHub Copilot](https://github.com/features/copilot)         | Supported                  |
-| [Cursor](https://cursor.com/)                                 | Supported                  |
-| [Windsurf](https://codeium.com/windsurf)                      | Supported                  |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli)     | Supported                  |
-| [Cline](https://github.com/cline/cline)                       | Supported                  |
-| [Roo Code](https://github.com/RooCodeInc/Roo-Code)            | Supported                  |
-| [Continue](https://continue.dev/)                             | Supported                  |
-| [Amazon Q](https://aws.amazon.com/q/developer/)               | Supported                  |
-| [Augment Code](https://www.augmentcode.com/)                  | Supported                  |
-| [Aider](https://aider.chat/)                                  | Supported                  |
-
-## Prerequisites
-
-- [Node.js](https://nodejs.org/) 24+
-- An AI coding agent (see [Supported Platforms](#supported-platforms))
+- **Hero** — background video luar angkasa (Mux HLS via `hls.js`) dengan poster fallback + fade-in
+- **Tentang Saya** — scroll word-reveal: teks menyala kata-per-kata mengikuti posisi gulir
+- **Kapabilitas (Tech & AI Stack)** — header pill sticky, kartu tech miring, kartu kapabilitas AI, parallax dua kolom (GSAP ScrollTrigger)
+- **Proyek** — list rows dengan hover glow & underline per-warna aksen, deskripsi expand saat hover, preview gambar yang mengikuti kursor
+- **Pengalaman** — timeline dengan dot glow (emerald untuk posisi saat ini) + word-reveal pada deskripsi & poin
+- **Pendidikan & Sertifikasi** — kartu IPK + grid sertifikasi
+- **Jurnal & Testimoni** — marquee kartu bintang 5× dengan mask fade
+- **AI Digital Twin** — mockup chat statis + widget **"Tanya AI"**: modal chat dengan pertanyaan saran, typing indicator, dan jawaban yang di-stream kata per kata
+- **Punya proyek?** — marquee display italic + video latar angkasa (footage Mux asli, terbalik vertikal)
+- **i18n ID/EN** via react-i18next
+- Smooth scrolling (Lenis) + animasi framer-motion & GSAP
 
 ## Tech Stack
 
-- **Next.js 16** — App Router, React 19, TypeScript strict
-- **shadcn/ui** — Radix primitives + Tailwind CSS v4
-- **Tailwind CSS v4** — oklch design tokens
-- **Lucide React** — default icons (replaced by extracted SVGs during cloning)
+| Kategori     | Teknologi                                        |
+| ------------ | ------------------------------------------------ |
+| Framework    | Next.js 16 (App Router), React 19, TypeScript strict |
+| Styling      | Tailwind CSS v4 (oklch tokens), shadcn/ui        |
+| Animasi      | framer-motion, GSAP + ScrollTrigger, Lenis       |
+| Video        | hls.js (stream Mux HLS)                          |
+| i18n         | react-i18next                                    |
 
-## How It Works
+## Menjalankan Lokal
 
-The `/clone-website` skill runs a multi-phase pipeline:
+> Node.js 20+ direkomendasikan.
 
-1. **Reconnaissance** — screenshots, design token extraction, interaction sweep (scroll, click, hover, responsive)
-2. **Foundation** — updates fonts, colors, globals, downloads all assets
-3. **Component Specs** — writes detailed spec files (`docs/research/components/`) with exact computed CSS values, states, behaviors, and content
-4. **Parallel Build** — dispatches builder agents in git worktrees, one per section/component
-5. **Assembly & QA** — merges worktrees, wires up the page, runs visual diff against the original
+```bash
+npm install
+npm run dev
+```
 
-Each builder agent receives the full component specification inline — exact `getComputedStyle()` values, interaction models, multi-state content, responsive breakpoints, and asset paths. No guessing.
+Buka [http://localhost:3000](http://localhost:3000).
 
-## Use Cases
+### Scripts
 
-- **Platform migration** — rebuild a site you own from WordPress/Webflow/Squarespace into a modern Next.js codebase
-- **Lost source code** — your site is live but the repo is gone, the developer left, or the stack is legacy. Get the code back in a modern format
-- **Learning** — deconstruct how production sites achieve specific layouts, animations, and responsive behavior by working with real code
+```bash
+npm run dev        # Development server
+npm run build      # Production build
+npm run lint       # ESLint check
+npm run typecheck  # TypeScript check
+npm run check      # lint + typecheck + build
+```
 
-## Not Intended For
+## Deploy ke Vercel
 
-- **Phishing or impersonation** — this project must not be used for deceptive purposes, impersonation, or any activity that breaks the law.
-- **Passing off someone's design as your own** — logos, brand assets, and original copy belong to their owners.
-- **Violating terms of service** — some sites explicitly prohibit scraping or reproduction. Check first.
+### Cara 1 — Dashboard (disarankan)
 
-## Project Structure
+1. Push repository ini ke GitHub.
+2. Buka [vercel.com/new](https://vercel.com/new) → **Add New... → Project**.
+3. **Import** repository `Space-Portofolio`.
+4. Vercel otomatis mendeteksi **Next.js** — biarkan pengaturan default:
+   - Framework Preset: `Next.js`
+   - Build Command: `next build` (default)
+   - Output Directory: `.next` (default)
+   - Install Command: `npm install` (default)
+5. Tidak ada **Environment Variables** yang wajib diisi (video Mux di-stream langsung dari CDN Mux).
+6. Klik **Deploy** — selesai. Setiap push ke `master` akan otomatis deploy ulang.
+
+### Cara 2 — Vercel CLI
+
+```bash
+npm i -g vercel
+vercel          # preview deployment
+vercel --prod   # production deployment
+```
+
+## Struktur Proyek
 
 ```
 src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons
-  lib/utils.ts      # cn() utility
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
+  app/               # Route (layout, page, globals.css)
+  components/        # Semua section + komponen pendukung
+    MuxVideoBackground.tsx   # Pemutar HLS Mux (hero + contact)
+    ScrollRevealText.tsx     # Word-reveal berbasis scroll
+    TanyaAiButton.tsx        # Trigger + modal chat Tanya AI
+    ...
+  hooks/useContent.ts# Konten i18n (id/en)
+  lib/content.ts     # Single source of truth konten
+  store/             # Redux (UI state)
+  types/             # TypeScript interfaces
 public/
-  images/           # Downloaded images from target
-  videos/           # Downloaded videos from target
-  seo/              # Favicons, OG images
-docs/
-  research/         # Extraction output & component specs
-  design-references/ # Screenshots
-scripts/
-  sync-agent-rules.sh  # Regenerate agent instruction files
-  sync-skills.mjs      # Regenerate /clone-website for all platforms
-AGENTS.md           # Agent instructions (single source of truth)
-CLAUDE.md           # Claude Code config (imports AGENTS.md)
-GEMINI.md           # Gemini CLI config (imports AGENTS.md)
+  images/            # Aset gambar (tech icons, projects, posters)
+  videos/            # Video lokal (fallback)
+docs/                # Referensi situs asli (HTML + aset hasil inspeksi)
 ```
 
-## Commands
+Konten situs (teks, data proyek, pengalaman, chat AI) terpusat di `src/lib/content.ts` — ubah di satu tempat untuk kedua bahasa.
 
-```bash
-npm run dev    # Start dev server
-npm run build  # Production build
-npm run lint   # ESLint check
-npm run typecheck # TypeScript check
-npm run check  # Run lint + typecheck + build
-```
+## Kredit
 
-### If using docker
-
-```bash
-docker compose up app --build # build and run the app
-docker compose up dev --build # run the app in dev mode on port 3001
-```
-
-## Updating for Other Platforms
-
-Two source-of-truth files power all platform support. Edit the source, then run the sync script:
-
-| What                   | Source of truth                         | Sync command                       |
-| ---------------------- | --------------------------------------- | ---------------------------------- |
-| Project instructions   | `AGENTS.md`                             | `bash scripts/sync-agent-rules.sh` |
-| `/clone-website` skill | `.claude/skills/clone-website/SKILL.md` | `node scripts/sync-skills.mjs`     |
-
-Each script regenerates the platform-specific copies automatically. Agents that read the source files natively need no regeneration.
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=JCodesMore/ai-website-cloner-template&type=Date)](https://star-history.com/#JCodesMore/ai-website-cloner-template&Date)
+- **Desain & website asli**: [Aditya Imam Zuhdi — izaditya.my.id](https://www.izaditya.my.id) · GitHub [@adityaimamz](https://github.com/adityaimamz)
+- Proyek ini dibuat untuk **tujuan pembelajaran** reverse-engineering frontend. Seluruh desain, konten, dan aset asli adalah milik Aditya Imam Zuhdi — gunakan dengan bijak dan beri kredit.
+- Template dasar: [AI Website Cloner Template](https://github.com/JCodesMore/ai-website-cloner-template)
 
 ## License
 
