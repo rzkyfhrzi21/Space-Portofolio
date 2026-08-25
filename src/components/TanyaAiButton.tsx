@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Send, X } from "lucide-react";
 import { useContent } from "@/hooks/useContent";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { setChatOpen } from "@/store/uiSlice";
 
 interface Message {
   id: string;
@@ -15,7 +17,9 @@ const GRADIENT = "linear-gradient(90deg, #89AACC, #4E85BF)";
 
 export function TanyaAiButton() {
   const { chat } = useContent();
-  const [open, setOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const open = useAppSelector((s) => s.ui.chatOpen);
+  const close = () => dispatch(setChatOpen(false));
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [typing, setTyping] = useState(false);
@@ -26,11 +30,11 @@ export function TanyaAiButton() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") dispatch(setChatOpen(false));
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -95,7 +99,7 @@ export function TanyaAiButton() {
             className="group fixed bottom-8 right-8 z-50 inline-flex items-center gap-2 rounded-full border border-stroke bg-surface/90 px-4 py-2.5 backdrop-blur-md transition-all duration-300 hover:border-white/20"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => setOpen(true)}
+            onClick={() => dispatch(setChatOpen(true))}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
@@ -131,7 +135,7 @@ export function TanyaAiButton() {
           >
             <motion.div
               className="absolute inset-0 bg-bg/80 backdrop-blur-sm"
-              onClick={() => setOpen(false)}
+              onClick={() => close()}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -171,7 +175,7 @@ export function TanyaAiButton() {
                   </span>
                   <button
                     type="button"
-                    onClick={() => setOpen(false)}
+                    onClick={() => close()}
                     aria-label={chat.closeLabel}
                     className="flex h-7 w-7 items-center justify-center rounded-full border border-stroke text-muted transition-colors hover:border-white/20 hover:text-text-primary"
                   >

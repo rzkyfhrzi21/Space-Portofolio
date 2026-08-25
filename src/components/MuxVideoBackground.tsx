@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { useAppDispatch } from "@/store/hooks";
+import { markMuxReady } from "@/store/uiSlice";
 
 type MuxVideoBackgroundProps = {
   playbackId: string;
@@ -18,6 +20,7 @@ export function MuxVideoBackground({
 }: MuxVideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -25,7 +28,10 @@ export function MuxVideoBackground({
     let hls: { destroy: () => void } | null = null;
     let cancelled = false;
 
-    const onPlaying = () => setReady(true);
+    const onPlaying = () => {
+      setReady(true);
+      dispatch(markMuxReady(playbackId));
+    };
 
     (async () => {
       const src = `https://stream.mux.com/${playbackId}.m3u8`;
@@ -63,7 +69,7 @@ export function MuxVideoBackground({
           () => {
             video.muted = true;
             video.play().catch(() => {});
-            setReady(true);
+            onPlaying();
           },
           { once: true },
         );
@@ -74,7 +80,7 @@ export function MuxVideoBackground({
       cancelled = true;
       hls?.destroy();
     };
-  }, [playbackId]);
+  }, [playbackId, dispatch]);
 
   return (
     <>

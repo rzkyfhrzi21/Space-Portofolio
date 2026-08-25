@@ -4,11 +4,14 @@ import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { MessageCircle, Send, Sparkles } from "lucide-react";
 import { useContent } from "@/hooks/useContent";
+import { useAppDispatch } from "@/store/hooks";
+import { setChatOpen } from "@/store/uiSlice";
 
 const AVATAR_GRADIENT = "bg-[linear-gradient(90deg,#89AACC,#4E85BF)]";
 
 export function AiTwinSection() {
   const { aiTwin } = useContent();
+  const dispatch = useAppDispatch();
 
   return (
     <section
@@ -37,6 +40,7 @@ export function AiTwinSection() {
             </p>
             <button
               type="button"
+              onClick={() => dispatch(setChatOpen(true))}
               className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-text-primary px-6 py-3.5 text-sm font-semibold text-bg transition-all duration-200 hover:scale-105 hover:bg-text-primary/90"
             >
               <span>{aiTwin.cta}</span>

@@ -1,34 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit, Instrument_Serif } from "next/font/google";
+import Script from "next/script";
+import localFont from "next/font/local";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const geist = Geist({
-  variable: "--font-geist",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
+const outfit = localFont({
+  src: "../fonts/outfit-latin-wght-normal.woff2",
   variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -73,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`dark ${geist.variable} ${geistMono.variable} ${outfit.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`dark ${GeistSans.variable} ${GeistMono.variable} ${outfit.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body
@@ -81,6 +63,10 @@ export default function RootLayout({
         className="min-h-full bg-bg text-text"
       >
         <Providers>{children}</Providers>
+        <Script
+          src="/security-warning.js"
+          strategy="afterInteractive"
+        />
         <Analytics />
         <SpeedInsights />
       </body>

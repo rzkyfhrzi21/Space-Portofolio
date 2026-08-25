@@ -15,6 +15,7 @@ export function Navbar() {
   const { locale, setLocale } = useLocale();
   const activeSection = useAppSelector((s) => s.ui.activeSection);
   const mobileMenuOpen = useAppSelector((s) => s.ui.mobileMenuOpen);
+  const chatOpen = useAppSelector((s) => s.ui.chatOpen);
 
   useEffect(() => {
     const ids = ["home", "projects", "experience", "thoughts"];
@@ -34,6 +35,8 @@ export function Navbar() {
   }, [dispatch]);
 
   const localeOrder = [...locales].reverse();
+
+  if (chatOpen) return null;
 
   return (
     <>

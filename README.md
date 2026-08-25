@@ -4,6 +4,7 @@ Portfolio pribadi hasil reverse-engineering dari [izaditya.my.id](https://www.iz
 
 ## Fitur
 
+- **Loading screen** — kata *Build / Engineering / Create* berganti, counter 000–100, progress bar, dan tirai exit; progres menunggu video Mux siap sehingga background langsung bergerak begitu layar terbuka
 - **Hero** — background video luar angkasa (Mux HLS via `hls.js`) dengan poster fallback + fade-in
 - **Tentang Saya** — scroll word-reveal: teks menyala kata-per-kata mengikuti posisi gulir
 - **Kapabilitas (Tech & AI Stack)** — header pill sticky, kartu tech miring, kartu kapabilitas AI, parallax dua kolom (GSAP ScrollTrigger)
@@ -25,6 +26,26 @@ Portfolio pribadi hasil reverse-engineering dari [izaditya.my.id](https://www.iz
 | Animasi      | framer-motion, GSAP + ScrollTrigger, Lenis       |
 | Video        | hls.js (stream Mux HLS)                          |
 | i18n         | react-i18next                                    |
+
+## Komponen & Library per Section
+
+| Bagian | Komponen | Library / Teknik |
+| --- | --- | --- |
+| Loading screen | `LoadingScreen` | framer-motion (word cycler `AnimatePresence`, tirai exit), Redux Toolkit (progres menunggu `muxReady`) |
+| Navbar | `Navbar` | Redux Toolkit (active section via IntersectionObserver, mobile menu, `chatOpen`), Tailwind |
+| Hero — background | `SpaceBackground` → `MuxVideoBackground` | **hls.js** (stream Mux HLS `stream.mux.com`), poster `next/image`, fade-in saat event `playing` |
+| Hero — konten | `HeroSection` | framer-motion (role cycler + blur-in), react-i18next |
+| Tentang Saya | `ScrollRevealText` | framer-motion `useScroll` + `useTransform` (opacity kata-per-kata mengikuti scroll), `prefers-reduced-motion` aware |
+| Stats | `StatsSection` | Tailwind divide + `font-display` italic |
+| Proyek | `ProjectsSection` | framer-motion `useMotionValue`/`useSpring` (preview mengikuti kursor), `next/image`, hover expand CSS grid-rows |
+| Pengalaman | `ExperienceSection` + `ScrollRevealText` | framer-motion (word reveal), IntersectionObserver-driven scroll |
+| Pendidikan | `EducationSection` | Tailwind (grid, gradient card) |
+| Kapabilitas | `TechStackSection` | **GSAP ScrollTrigger** (parallax dua kolom berlawanan arah), CSS `sticky` pin, `next/image` devicon |
+| Testimoni | `TestimonialsSection` | CSS keyframes marquee + `mask-image` fade, lucide `Star` |
+| AI Digital Twin | `AiTwinSection` | framer-motion (typing dots), lucide `Sparkles`/`MessageCircle` |
+| Tanya AI (modal) | `TanyaAiButton` | framer-motion `AnimatePresence` (spring modal, streaming jawaban), Redux Toolkit (`chatOpen` — navbar ikut disembunyikan) |
+| Kontak + Footer | `ContactSection` | `MuxVideoBackground` (hls.js, flip vertikal), CSS marquee `contact-marquee-track` |
+| Global | — | **react-i18next** (ID/EN, konten terpusat di `lib/content.ts`), **Lenis** smooth scroll, **lucide-react** (ikon), **Redux Toolkit** (UI state), font **Geist** + **Outfit** self-hosted (paket `geist` + `next/font/local`, tanpa CDN) |
 
 ## Menjalankan Lokal
 

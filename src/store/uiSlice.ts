@@ -4,12 +4,16 @@ interface UiState {
   mobileMenuOpen: boolean;
   activeSection: string;
   scrolled: boolean;
+  chatOpen: boolean;
+  muxReady: string[];
 }
 
 const initialState: UiState = {
   mobileMenuOpen: false,
   activeSection: "home",
   scrolled: false,
+  chatOpen: false,
+  muxReady: [],
 };
 
 const uiSlice = createSlice({
@@ -28,9 +32,23 @@ const uiSlice = createSlice({
     setScrolled(state, action: PayloadAction<boolean>) {
       state.scrolled = action.payload;
     },
+    setChatOpen(state, action: PayloadAction<boolean>) {
+      state.chatOpen = action.payload;
+    },
+    markMuxReady(state, action: PayloadAction<string>) {
+      if (!state.muxReady.includes(action.payload)) {
+        state.muxReady.push(action.payload);
+      }
+    },
   },
 });
 
-export const { toggleMobileMenu, setMobileMenu, setActiveSection, setScrolled } =
-  uiSlice.actions;
+export const {
+  toggleMobileMenu,
+  setMobileMenu,
+  setActiveSection,
+  setScrolled,
+  setChatOpen,
+  markMuxReady,
+} = uiSlice.actions;
 export default uiSlice.reducer;

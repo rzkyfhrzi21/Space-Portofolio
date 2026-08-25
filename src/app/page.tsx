@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/Navbar";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { StatsSection } from "@/components/StatsSection";
@@ -15,6 +16,7 @@ import { TanyaAiButton } from "@/components/TanyaAiButton";
 export default function Home() {
   return (
     <>
+      <LoadingScreen />
       <Navbar />
       <main className="relative">
         <HeroSection />
