@@ -50,3 +50,6 @@ temp/
 
 # Session logs
 logs/
+
+# TypeScript build info
+tsconfig.tsbuildinfo

@@ -1,25 +1,23 @@
 {
-  "name": "ai-website-clone-template",
-  "version": "0.3.1",
+  "name": "space-portofolio",
+  "version": "1.0.0",
   "private": true,
-  "description": "Clone any website into a clean, modern Next.js codebase using AI coding agents",
-  "author": "JCodesMore",
+  "description": "Personal portfolio website for Aditya Imam Zuhdi — a near 1:1 rebuild of izaditya.my.id",
+  "author": "rzkyfhrzi21",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
+    "url": "https://github.com/rzkyfhrzi21/Space-Portofolio.git"
   },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
+  "homepage": "https://github.com/rzkyfhrzi21/Space-Portofolio",
   "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
+    "url": "https://github.com/rzkyfhrzi21/Space-Portofolio/issues"
   },
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
+    "portfolio",
     "nextjs",
-    "ai",
-    "template",
+    "react",
+    "typescript",
     "tailwindcss",
     "shadcn-ui"
   ],
