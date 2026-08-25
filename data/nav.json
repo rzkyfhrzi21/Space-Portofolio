@@ -1,0 +1,48 @@
+{
+  "resumeHref": "/assets/documents/aditya-imam-zuhdi-resume.pdf",
+  "githubHref": "https://github.com/adityaimamz",
+  "id": {
+    "links": [
+      {
+        "label": "Beranda",
+        "href": "#home"
+      },
+      {
+        "label": "Proyek",
+        "href": "#projects"
+      },
+      {
+        "label": "Pengalaman",
+        "href": "#experience"
+      },
+      {
+        "label": "Tulisan",
+        "href": "#thoughts"
+      }
+    ],
+    "hireMe": "Hubungi Saya",
+    "resume": "Resume"
+  },
+  "en": {
+    "links": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "Experience",
+        "href": "#experience"
+      },
+      {
+        "label": "Thoughts",
+        "href": "#thoughts"
+      }
+    ],
+    "hireMe": "Contact Me",
+    "resume": "Resume"
+  }
+}

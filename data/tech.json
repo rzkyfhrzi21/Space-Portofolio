@@ -1,0 +1,80 @@
+{
+  "id": {
+    "eyebrow": "Kapabilitas",
+    "headingLead": "Tech",
+    "headingAccent": "& AI Stack.",
+    "description": "Teknologi, tools, dan sistem AI yang saya gunakan untuk membangun perangkat lunak modern.",
+    "viewOnGithub": "Lihat di GitHub",
+    "capabilities": [
+      {
+        "title": "Sistem RAG",
+        "description": "Membangun pipeline Retrieval-Augmented Generation (RAG) dengan vector database untuk memberikan respons yang akurat dan berbasis konteks.",
+        "tags": [
+          "LangChain",
+          "Vector Database",
+          "OpenAI",
+          "Gemini"
+        ]
+      },
+      {
+        "title": "Integrasi LLM",
+        "description": "Mengintegrasikan OpenAI dan Gemini ke dalam aplikasi web untuk mengotomatisasi alur kerja, menghasilkan konten, dan menggerakkan fitur cerdas.",
+        "tags": [
+          "OpenAI API",
+          "Gemini API",
+          "FastAPI",
+          "NestJS"
+        ]
+      },
+      {
+        "title": "AI Chatbot & Otomasi",
+        "description": "Mengembangkan AI chatbot dengan pencarian kontekstual, percakapan multi-turn, dan integrasi sistem enterprise.",
+        "tags": [
+          "RAG",
+          "RabbitMQ",
+          "Prompt Engineering",
+          "REST API"
+        ]
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Capabilities",
+    "headingLead": "Tech",
+    "headingAccent": "& AI Stack.",
+    "description": "Technologies, tools, and AI systems I use to build modern software.",
+    "viewOnGithub": "View on GitHub",
+    "capabilities": [
+      {
+        "title": "RAG Systems",
+        "description": "Building Retrieval-Augmented Generation (RAG) pipelines with vector databases to deliver accurate, context-grounded responses.",
+        "tags": [
+          "LangChain",
+          "Vector Database",
+          "OpenAI",
+          "Gemini"
+        ]
+      },
+      {
+        "title": "LLM Integration",
+        "description": "Integrating OpenAI and Gemini into web applications to automate workflows, generate content, and power intelligent features.",
+        "tags": [
+          "OpenAI API",
+          "Gemini API",
+          "FastAPI",
+          "NestJS"
+        ]
+      },
+      {
+        "title": "AI Chatbot & Automation",
+        "description": "Developing AI chatbots with contextual search, multi-turn conversations, and enterprise system integration.",
+        "tags": [
+          "RAG",
+          "RabbitMQ",
+          "Prompt Engineering",
+          "REST API"
+        ]
+      }
+    ]
+  }
+}

@@ -102,16 +102,22 @@ src/
     TanyaAiButton.tsx        # Trigger + modal chat Tanya AI
     ...
   hooks/useContent.ts# Konten i18n (id/en)
-  lib/content.ts     # Single source of truth konten
+  lib/content.ts     # Loader: membaca data/*.json menjadi SiteContent bertipe
   store/             # Redux (UI state)
   types/             # TypeScript interfaces
-public/
-  images/            # Aset gambar (tech icons, projects, posters)
-  videos/            # Video lokal (fallback)
+data/                # Single source of truth konten situs (per section, ID/EN)
+  hero.json          # Nama, role, CTA hero
+  projects.json      # Judul, deskripsi, link, gambar proyek
+  experience.json    # Riwayat pekerjaan
+  education.json     # Pendidikan & sertifikasi
+  nav.json           # Link navbar + resume + GitHub
+  tech-cards.json    # Daftar teknologi (Frontend/Backend/Tools & AI)
+  ...                # about, stats, thoughts, tech, testimonials, ai-twin, chat, contact
+public/images/       # Aset gambar (tech icons, projects, posters)
 docs/                # Referensi situs asli (HTML + aset hasil inspeksi)
 ```
 
-Konten situs (teks, data proyek, pengalaman, chat AI) terpusat di `src/lib/content.ts` — ubah di satu tempat untuk kedua bahasa.
+Konten situs (nama, link sosial, proyek, pengalaman, pendidikan, chat AI, dll.) terpisah per section di `data/*.json` dengan kunci locale `id`/`en` — **edit JSON saja, tanpa menyentuh kode Next.js**.
 
 ## Kredit
 

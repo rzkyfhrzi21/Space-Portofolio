@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 import { githubHref } from "@/lib/content";
 import { useContent, useLocale } from "@/hooks/useContent";
+import cardsData from "../../data/tech-cards.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,70 +24,11 @@ interface TechCardData {
   items: TechItem[];
 }
 
-const ICONS_PATH = "/images/tech";
+const ICONS_PATH: string = cardsData.iconBasePath;
+const TECH_CARDS = cardsData.cards as TechCardData[];
 
 const CARD_BASE =
   "pointer-events-auto group relative flex h-auto min-h-[260px] w-full flex-col rounded-2xl border border-stroke bg-surface/30 pt-5 pb-4 pl-3 pr-4 backdrop-blur-sm transition-all duration-300 hover:rotate-0 hover:scale-105 hover:border-white/15 sm:max-w-[280px] md:max-w-[360px] md:pt-6 md:pb-6 md:pl-4 md:pr-6";
-
-const FRONTEND_CARD: TechCardData = {
-  label: "Frontend",
-  tilt: "-rotate-2",
-  count: 9,
-  items: [
-    { name: "React", slug: "react" },
-    { name: "Next.js", slug: "nextjs", invert: true },
-    { name: "TypeScript", slug: "typescript" },
-    { name: "JavaScript", slug: "javascript" },
-    { name: "HTML5", slug: "html5" },
-    { name: "CSS3", slug: "css3" },
-    { name: "Tailwind CSS", slug: "tailwindcss" },
-    { name: "Bootstrap", slug: "bootstrap" },
-    { name: "Livewire", slug: "livewire" },
-  ],
-};
-
-const BACKEND_CARD: TechCardData = {
-  label: "Backend",
-  tilt: "-rotate-2",
-  count: 11,
-  items: [
-    { name: "Go", slug: "go" },
-    { name: "Java", slug: "java" },
-    { name: "Python", slug: "python" },
-    { name: "PHP", slug: "php" },
-    { name: "Spring Boot", slug: "spring" },
-    { name: "Django REST", slug: "djangorest" },
-    { name: "FastAPI", slug: "fastapi" },
-    { name: "NestJS", slug: "nestjs" },
-    { name: "Express.js", slug: "express", invert: true },
-    { name: "Laravel", slug: "laravel" },
-    { name: "Flask", slug: "flask", invert: true },
-  ],
-};
-
-const TOOLS_AI_CARD: TechCardData = {
-  label: "Tools & AI",
-  tilt: "-rotate-2",
-  count: 17,
-  items: [
-    { name: "PostgreSQL", slug: "postgresql" },
-    { name: "MySQL", slug: "mysql" },
-    { name: "MongoDB", slug: "mongodb" },
-    { name: "Redis", slug: "redis" },
-    { name: "Docker", slug: "docker" },
-    { name: "Git", slug: "git" },
-    { name: "GitHub", slug: "github", invert: true },
-    { name: "GitLab", slug: "gitlab" },
-    { name: "RabbitMQ", slug: "rabbitmq" },
-    { name: "Postman", slug: "postman" },
-    { name: "OpenAI", slug: "openai", invert: true },
-    { name: "Gemini", slug: "gemini" },
-    { name: "SharePoint", slug: "sharepoint" },
-    { name: "OpenRouter", slug: "openrouter", invert: true },
-    { name: "PowerApps", slug: "power-apps" },
-    { name: "Power Automate", slug: "power-automate" },
-  ],
-};
 
 function TechCard({ card, countLabel }: { card: TechCardData; countLabel: string }) {
   return (
@@ -196,9 +138,9 @@ export function TechStackSection() {
             data-col-tech
             className="flex flex-col items-end gap-6 pt-[18vh] sm:gap-12 md:gap-32 md:pt-[22vh]"
           >
-            <TechCard card={FRONTEND_CARD} countLabel={countLabel} />
-            <TechCard card={BACKEND_CARD} countLabel={countLabel} />
-            <TechCard card={TOOLS_AI_CARD} countLabel={countLabel} />
+            <TechCard card={TECH_CARDS[0]} countLabel={countLabel} />
+            <TechCard card={TECH_CARDS[1]} countLabel={countLabel} />
+            <TechCard card={TECH_CARDS[2]} countLabel={countLabel} />
           </div>
           <div
             data-col-capability

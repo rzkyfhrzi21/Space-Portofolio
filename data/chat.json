@@ -1,0 +1,78 @@
+{
+  "id": {
+    "trigger": "Tanya AI",
+    "title": "AI Twin Aditya",
+    "status": "Online",
+    "initialMessage": "Hai! Saya AI Twin Aditya. Kamu bisa bertanya tentang pengalaman, tech stack, atau proyek yang pernah ia bangun.",
+    "placeholder": "Tanyakan sesuatu tentang saya...",
+    "disclaimer": "Respons AI mungkin tidak selalu akurat. Untuk informasi resmi, silakan hubungi langsung melalui email atau bagian kontak.",
+    "closeLabel": "Tutup chat",
+    "sendLabel": "Kirim pesan",
+    "fallback": "Pertanyaan yang menarik. Untuk detail lebih lanjut, silakan hubungi langsung melalui adityaimam8@gmail.com atau cek bagian terkait di halaman ini.",
+    "suggestedQuestions": [
+      "Siapa Aditya Imam Zuhdi?",
+      "Apa tech stack yang digunakan?",
+      "Proyek apa saja yang pernah dibangun?"
+    ],
+    "responses": [
+      {
+        "question": "Siapa Aditya Imam Zuhdi?",
+        "answer": "Saya Aditya Imam Zuhdi, seorang Full-Stack Software Engineer yang berbasis di Indonesia dan saat ini bekerja di Telkomsigma. Saya berfokus pada aplikasi web modern, backend yang scalable, dan integrasi AI."
+      },
+      {
+        "question": "Apa tech stack yang digunakan?",
+        "answer": "Stack utama saya mencakup Go, Python, Java Spring Boot, Django REST, FastAPI, dan NestJS untuk backend, serta React, Next.js, dan TypeScript untuk frontend. Saya juga bekerja dengan LangChain, vector database, dan LLM API."
+      },
+      {
+        "question": "Proyek apa saja yang pernah dibangun?",
+        "answer": "Beberapa proyek unggulan termasuk WhatsApp AI Chatbot dengan pipeline RAG, Celestial Scroll, E-Learning School Platform, dan sistem POS untuk usaha kecil."
+      },
+      {
+        "question": "Apakah Aditya menerima freelance?",
+        "answer": "Saya saat ini terbuka untuk peluang freelance dan kolaborasi. Silakan hubungi melalui bagian Kontak atau email langsung ke adityaimam8@gmail.com."
+      },
+      {
+        "question": "Bagaimana cara menghubungi Aditya?",
+        "answer": "Kamu bisa menghubungi saya di adityaimam8@gmail.com, atau terhubung melalui LinkedIn dan GitHub. Bagian kontak di halaman ini juga memiliki tautan langsung."
+      }
+    ]
+  },
+  "en": {
+    "trigger": "Ask AI",
+    "title": "Aditya's AI Twin",
+    "status": "Online",
+    "initialMessage": "Hi! I'm Aditya's AI Twin. You can ask me anything about my experience, tech stack, or projects.",
+    "placeholder": "Ask something about me...",
+    "disclaimer": "AI responses may not always be accurate. For official information, please reach out directly via email or the contact section.",
+    "closeLabel": "Close chat",
+    "sendLabel": "Send message",
+    "fallback": "That's a great question. For more details, feel free to reach out directly at adityaimam8@gmail.com or check the relevant section on this page.",
+    "suggestedQuestions": [
+      "Who is Aditya Imam Zuhdi?",
+      "What is his tech stack?",
+      "What projects has he built?"
+    ],
+    "responses": [
+      {
+        "question": "Who is Aditya Imam Zuhdi?",
+        "answer": "I'm Aditya Imam Zuhdi, a Full-Stack Software Engineer based in Indonesia, currently working at Telkomsigma. I specialize in modern web applications, scalable backends, and AI integrations."
+      },
+      {
+        "question": "What is his tech stack?",
+        "answer": "My core stack includes Go, Python, Java Spring Boot, Django REST, FastAPI, and NestJS on the backend, plus React, Next.js, and TypeScript on the frontend. I also work with LangChain, vector databases, and LLM APIs."
+      },
+      {
+        "question": "What projects has he built?",
+        "answer": "Notable projects include a WhatsApp AI Chatbot with RAG pipeline, Celestial Scroll, an E-Learning School Platform, and a POS System for a small business."
+      },
+      {
+        "question": "Does Aditya take freelance work?",
+        "answer": "I'm currently open to freelance and collaborative opportunities. Feel free to reach out via the Contact section or email me directly at adityaimam8@gmail.com."
+      },
+      {
+        "question": "How can I contact Aditya?",
+        "answer": "You can reach me at adityaimam8@gmail.com, or connect via LinkedIn and GitHub. The contact section of this page also has a direct link."
+      }
+    ]
+  }
+}

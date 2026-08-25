@@ -1,0 +1,76 @@
+{
+  "id": {
+    "eyebrow": "Jurnal",
+    "headingLead": "Catatan",
+    "headingAccent": "terbaru",
+    "description": "Catatan dan pemikiran tentang teknologi dan kehidupan.",
+    "viewAll": "Lihat semua tulisan",
+    "items": [
+      {
+        "title": "Prompt Engineering untuk Coding Agen",
+        "category": "Prompt Engineering",
+        "readingTime": "8 menit baca",
+        "date": "27 April 2026",
+        "href": "https://www.izaditya.my.id/blog/prompt-engineering-for-coding-agents"
+      },
+      {
+        "title": "Di Balik Layar: Arsitektur Portofolio Saya",
+        "category": "Full-Stack Engineering",
+        "readingTime": "8 menit baca",
+        "date": "27 April 2026",
+        "href": "https://www.izaditya.my.id/blog/behind-the-scenes-portfolio-architecture"
+      },
+      {
+        "title": "Backend Jalan Bukan Berarti Siap Ramai: Kesalahan yang Sering Terjadi di Awal Pengembangan",
+        "category": "Backend Engineering",
+        "readingTime": "10 menit baca",
+        "date": "28 April 2026",
+        "href": "https://www.izaditya.my.id/blog/backend-that-works-is-not-always-ready-for-traffic"
+      },
+      {
+        "title": "Bukan Sekadar Endpoint: Cara Backend Engineer Mendesain API yang Mudah Dipakai dan Dirawat",
+        "category": "Backend Engineering",
+        "readingTime": "12 menit baca",
+        "date": "28 April 2026",
+        "href": "https://www.izaditya.my.id/blog/not-just-an-endpoint-how-backend-engineers-design-maintainable-apis"
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Journal",
+    "headingLead": "Notes",
+    "headingAccent": "& thoughts",
+    "description": "Notes and thoughts on technology and life.",
+    "viewAll": "View all writing",
+    "items": [
+      {
+        "title": "Prompt Engineering for Coding Agents",
+        "category": "Prompt Engineering",
+        "readingTime": "8 min read",
+        "date": "27 April 2026",
+        "href": "https://www.izaditya.my.id/blog/prompt-engineering-for-coding-agents"
+      },
+      {
+        "title": "Behind the Scenes: My Portfolio Architecture Explained",
+        "category": "Full-Stack Engineering",
+        "readingTime": "8 min read",
+        "date": "27 April 2026",
+        "href": "https://www.izaditya.my.id/blog/behind-the-scenes-portfolio-architecture"
+      },
+      {
+        "title": "Backend That Works Is Not Always Ready for Traffic: Common Mistakes Developers Make Early in Development",
+        "category": "Backend Engineering",
+        "readingTime": "10 min read",
+        "date": "28 April 2026",
+        "href": "https://www.izaditya.my.id/blog/backend-that-works-is-not-always-ready-for-traffic"
+      },
+      {
+        "title": "Not Just an Endpoint: How Backend Engineers Design APIs That Are Easy to Use and Maintain",
+        "category": "Backend Engineering",
+        "readingTime": "12 min read",
+        "date": "28 April 2026",
+        "href": "https://www.izaditya.my.id/blog/not-just-an-endpoint-how-backend-engineers-design-maintainable-apis"
+      }
+    ]
+  }
+}

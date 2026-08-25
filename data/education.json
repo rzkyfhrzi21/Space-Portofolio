@@ -1,0 +1,98 @@
+{
+  "id": {
+    "eyebrow": "Pendidikan & Sertifikasi",
+    "headingLead": "Pendidikan &",
+    "headingAccent": "Sertifikasi",
+    "viewAll": "Lihat Semua",
+    "items": [
+      {
+        "degree": "Sarjana Teknik Informatika",
+        "institution": "Universitas Telkom - Beasiswa Akademik Penuh",
+        "gpaLabel": "IPK 3.94",
+        "gpa": "3.94",
+        "degreeShort": "S1",
+        "period": "2020 - 2024"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Google AI",
+        "issuer": "Google",
+        "year": "2026"
+      },
+      {
+        "title": "Microsoft Azure AI Fundamentals",
+        "issuer": "Microsoft",
+        "year": "2025"
+      },
+      {
+        "title": "Junior Web Developer",
+        "issuer": "BNSP Indonesia",
+        "year": "2024"
+      },
+      {
+        "title": "Became Front-end and Back-end Developer",
+        "issuer": "DIcoding",
+        "year": "2022"
+      },
+      {
+        "title": "Prompt Engineering untuk Developer",
+        "issuer": "Sertifikasi",
+        "year": "2025"
+      },
+      {
+        "title": "NestJS Zero to Hero",
+        "issuer": "Udemy",
+        "year": "2025"
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Education & Certifications",
+    "headingLead": "Education &",
+    "headingAccent": "Certifications",
+    "viewAll": "View All",
+    "items": [
+      {
+        "degree": "Bachelor of Informatics Engineering",
+        "institution": "Telkom University - Full Academic Scholarship",
+        "gpaLabel": "GPA 3.94",
+        "gpa": "3.94",
+        "degreeShort": "S1",
+        "period": "2020 - 2024"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Google AI",
+        "issuer": "Google",
+        "year": "2026"
+      },
+      {
+        "title": "Microsoft Azure AI Fundamentals",
+        "issuer": "Microsoft",
+        "year": "2025"
+      },
+      {
+        "title": "Junior Web Developer",
+        "issuer": "BNSP Indonesia",
+        "year": "2024"
+      },
+      {
+        "title": "Became Front-end and Back-end Developer",
+        "issuer": "DIcoding",
+        "year": "2022"
+      },
+      {
+        "title": "Prompt Engineering for Developers",
+        "issuer": "Certification",
+        "year": "2025"
+      },
+      {
+        "title": "NestJS Zero to Hero",
+        "issuer": "Udemy",
+        "year": "2025"
+      }
+    ]
+  }
+}

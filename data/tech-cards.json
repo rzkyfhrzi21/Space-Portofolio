@@ -1,0 +1,62 @@
+{
+  "iconBasePath": "/images/tech",
+  "cards": [
+    {
+      "label": "Frontend",
+      "tilt": "-rotate-2",
+      "count": 9,
+      "items": [
+        { "name": "React", "slug": "react" },
+        { "name": "Next.js", "slug": "nextjs", "invert": true },
+        { "name": "TypeScript", "slug": "typescript" },
+        { "name": "JavaScript", "slug": "javascript" },
+        { "name": "HTML5", "slug": "html5" },
+        { "name": "CSS3", "slug": "css3" },
+        { "name": "Tailwind CSS", "slug": "tailwindcss" },
+        { "name": "Bootstrap", "slug": "bootstrap" },
+        { "name": "Livewire", "slug": "livewire" }
+      ]
+    },
+    {
+      "label": "Backend",
+      "tilt": "-rotate-2",
+      "count": 11,
+      "items": [
+        { "name": "Go", "slug": "go" },
+        { "name": "Java", "slug": "java" },
+        { "name": "Python", "slug": "python" },
+        { "name": "PHP", "slug": "php" },
+        { "name": "Spring Boot", "slug": "spring" },
+        { "name": "Django REST", "slug": "djangorest" },
+        { "name": "FastAPI", "slug": "fastapi" },
+        { "name": "NestJS", "slug": "nestjs" },
+        { "name": "Express.js", "slug": "express", "invert": true },
+        { "name": "Laravel", "slug": "laravel" },
+        { "name": "Flask", "slug": "flask", "invert": true }
+      ]
+    },
+    {
+      "label": "Tools & AI",
+      "tilt": "-rotate-2",
+      "count": 17,
+      "items": [
+        { "name": "PostgreSQL", "slug": "postgresql" },
+        { "name": "MySQL", "slug": "mysql" },
+        { "name": "MongoDB", "slug": "mongodb" },
+        { "name": "Redis", "slug": "redis" },
+        { "name": "Docker", "slug": "docker" },
+        { "name": "Git", "slug": "git" },
+        { "name": "GitHub", "slug": "github", "invert": true },
+        { "name": "GitLab", "slug": "gitlab" },
+        { "name": "RabbitMQ", "slug": "rabbitmq" },
+        { "name": "Postman", "slug": "postman" },
+        { "name": "OpenAI", "slug": "openai", "invert": true },
+        { "name": "Gemini", "slug": "gemini" },
+        { "name": "SharePoint", "slug": "sharepoint" },
+        { "name": "OpenRouter", "slug": "openrouter", "invert": true },
+        { "name": "PowerApps", "slug": "power-apps" },
+        { "name": "Power Automate", "slug": "power-automate" }
+      ]
+    }
+  ]
+}

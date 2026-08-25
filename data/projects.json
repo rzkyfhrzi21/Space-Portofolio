@@ -1,0 +1,168 @@
+{
+  "id": {
+    "eyebrow": "Karya Pilihan",
+    "headingLead": "Proyek",
+    "headingAccent": "unggulan",
+    "description": "Pilihan proyek yang pernah saya kerjakan, dari konsep hingga peluncuran.",
+    "viewAll": "Lihat semua karya",
+    "items": [
+      {
+        "slug": "celestial-scroll",
+        "title": "Celestial Scroll - Novel Reader",
+        "description": "Platform membaca berbasis web modern untuk pembaca light novel dengan pengalaman baca yang dapat dikustomisasi dan dukungan Progressive Web App.",
+        "image": "/images/projects/celestial-scroll.webp",
+        "year": "2026",
+        "category": "Full-Stack - PWA",
+        "categoryShort": "Full-Stack / PWA",
+        "accent": "#4E85BF",
+        "href": "https://github.com/adityaimamz/CelestialScroll",
+        "tags": [
+          "Full-Stack",
+          "PWA",
+          "React",
+          "Supabase"
+        ]
+      },
+      {
+        "slug": "family-tree",
+        "title": "Template Website Silsilah Keluarga",
+        "description": "Template website full-stack yang reusable untuk arsip keluarga dan silsilah interaktif, dilengkapi halaman publik, profil anggota, galeri, timeline, serta admin panel berbasis database.",
+        "image": "/images/projects/family-tree.webp",
+        "year": "2026",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#8B6BAE",
+        "href": "https://github.com/adityaimamz/family-tree",
+        "tags": [
+          "Full-Stack",
+          "Silsilah Keluarga",
+          "React",
+          "TypeScript",
+          "PostgreSQL",
+          "Prisma",
+          "Admin Panel",
+          "Vercel"
+        ]
+      },
+      {
+        "slug": "e-learning-platform",
+        "title": "E-Learning School Platform",
+        "description": "Platform pembelajaran online dengan fitur manajemen materi kursus, pelacakan tugas, dan alat komunikasi untuk siswa serta guru.",
+        "image": "/images/projects/e-learning-platform.webp",
+        "year": "2023",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#6B9E78",
+        "href": "https://github.com/adityaimamz/E-learning-Laravel",
+        "tags": [
+          "Full-Stack",
+          "Laravel",
+          "Livewire",
+          "MySQL"
+        ]
+      },
+      {
+        "slug": "beyond-studio",
+        "title": "Landing Page Beyond Studio",
+        "description": "Landing page modern dan responsif untuk Beyond Studio, layanan pembuatan website custom yang ditujukan untuk bisnis, mahasiswa, freelancer, dan profesional. Dirancang dengan fokus pada penyampaian layanan yang jelas, harga transparan, showcase portofolio, serta CTA konsultasi WhatsApp untuk meningkatkan konversi. Website dilengkapi animasi yang smooth, layout responsif, dark/light mode, dan arsitektur komponen modular agar mudah dikembangkan dan dipelihara.",
+        "image": "/images/projects/beyond-studio.webp",
+        "year": "2026",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#8B7355",
+        "href": "https://beyond-studio-lac.vercel.app/",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Responsive Web Design"
+        ]
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Selected Work",
+    "headingLead": "Featured",
+    "headingAccent": "projects",
+    "description": "A selection of projects I've worked on, from concept to launch.",
+    "viewAll": "View all work",
+    "items": [
+      {
+        "slug": "celestial-scroll",
+        "title": "Celestial Scroll - Novel Reader",
+        "description": "A modern web-based reading platform for light novel readers featuring customizable reading experiences and Progressive Web App support.",
+        "image": "/images/projects/celestial-scroll.webp",
+        "year": "2026",
+        "category": "Full-Stack - PWA",
+        "categoryShort": "Full-Stack / PWA",
+        "accent": "#4E85BF",
+        "href": "https://github.com/adityaimamz/CelestialScroll",
+        "tags": [
+          "Full-Stack",
+          "PWA",
+          "React",
+          "Supabase"
+        ]
+      },
+      {
+        "slug": "family-tree",
+        "title": "Family Tree Website Template",
+        "description": "A reusable full-stack website template for family archives and interactive genealogy, complete with public pages, member profiles, galleries, timelines, and a database-backed admin panel.",
+        "image": "/images/projects/family-tree.webp",
+        "year": "2026",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#8B6BAE",
+        "href": "https://github.com/adityaimamz/family-tree",
+        "tags": [
+          "Full-Stack",
+          "Family Tree",
+          "React",
+          "TypeScript",
+          "PostgreSQL",
+          "Prisma",
+          "Admin Panel",
+          "Vercel"
+        ]
+      },
+      {
+        "slug": "e-learning-platform",
+        "title": "E-Learning School Platform",
+        "description": "An online learning platform featuring course material management, assignment tracking, and communication tools for students and teachers.",
+        "image": "/images/projects/e-learning-platform.webp",
+        "year": "2023",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#6B9E78",
+        "href": "https://github.com/adityaimamz/E-learning-Laravel",
+        "tags": [
+          "Full-Stack",
+          "Laravel",
+          "Livewire",
+          "MySQL"
+        ]
+      },
+      {
+        "slug": "beyond-studio",
+        "title": "Beyond Studio Landing Page",
+        "description": "A modern, responsive landing page for Beyond Studio, a custom website development service for businesses, students, freelancers, and professionals. Designed with a focus on clear service presentation, transparent pricing, portfolio showcase, and a WhatsApp consultation CTA to increase conversions. Built with smooth animations, a responsive layout, dark/light mode, and a modular component architecture for easy maintenance.",
+        "image": "/images/projects/beyond-studio.webp",
+        "year": "2026",
+        "category": "Full-Stack",
+        "categoryShort": "Full-Stack",
+        "accent": "#8B7355",
+        "href": "https://beyond-studio-lac.vercel.app/",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Responsive Web Design"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": {
+    "eyebrow": "Pengalaman Saya",
+    "headingLead": "Riwayat",
+    "headingAccent": "kerja.",
+    "description": "Perusahaan dan peran yang membentuk perjalanan engineering saya.",
+    "meta": "3 Peran dalam 3+ Tahun",
+    "current": "Saat ini",
+    "items": [
+      {
+        "start": "Jul 2024",
+        "end": "Sekarang",
+        "role": "Programmer",
+        "company": "PT Sigma Cipta Caraka (Telkomsigma)",
+        "current": true,
+        "description": "Mengembangkan backend services dan enterprise-grade API menggunakan Django REST Framework, Golang, Java Spring Boot, FastAPI, Flask, dan NestJS. Menerapkan fitur AI berbasis LLM termasuk chatbot cerdas, perbandingan dokumen, dan versioning dokumen otomatis.",
+        "points": [
+          "Migrasi dan upgrade komponen sistem KPEI e-CLEARS menggunakan Java Spring Boot untuk mendukung arsitektur microservices modern dan Java 17+.",
+          "Berkolaborasi dengan tim lintas fungsi untuk membangun dan meningkatkan aplikasi internal maupun client-facing.",
+          "Melakukan migrasi data untuk memastikan integrasi berjalan lancar selama upgrade sistem dan deployment baru.",
+          "Menyelesaikan issue production dan mengimplementasikan fitur baru untuk meningkatkan performa serta stabilitas sistem.",
+          "Membangun aplikasi bisnis internal menggunakan Microsoft PowerApps untuk menyederhanakan workflow internal.",
+          "Menerapkan teknologi LLM untuk mengembangkan fitur AI seperti chatbot cerdas, perbandingan dokumen, dan versioning dokumen otomatis."
+        ]
+      },
+      {
+        "start": "Jan 2023",
+        "end": "Agu 2024",
+        "role": "Full-Stack Developer",
+        "company": "Freelance",
+        "description": "Mengembangkan aplikasi web custom untuk klien dari berbagai industri, dengan fokus pada keandalan, performa, dan pengalaman pengguna yang baik.",
+        "points": [
+          "Menyelesaikan Sistem Antrian Barbershop, Sistem Pakar Perawatan Kulit, Platform E-Learning Sekolah, dan Website Pemesanan Wisata.",
+          "Menerapkan teknologi web modern untuk membangun aplikasi yang andal, mudah digunakan, serta sesuai kebutuhan dan timeline klien."
+        ]
+      },
+      {
+        "start": "Feb 2023",
+        "end": "Jul 2023",
+        "role": "Software Engineer Intern",
+        "company": "Solo Technopark",
+        "description": "Berkontribusi dalam pengembangan sistem digital dan inisiatif modernisasi website.",
+        "points": [
+          "Membangun sistem informasi untuk Soto Panaz yang mencakup desain arsitektur dan manajemen database.",
+          "Migrasi website WordPress ke stack modern menggunakan Next.js, Express.js, dan Tailwind CSS.",
+          "Melakukan pengujian fungsional, integrasi, dan performa."
+        ]
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "My Experience",
+    "headingLead": "Work",
+    "headingAccent": "history.",
+    "description": "Companies and roles that shaped my engineering journey.",
+    "meta": "3 Roles in 3+ Years",
+    "current": "Currently",
+    "items": [
+      {
+        "start": "Jul 2024",
+        "end": "Now",
+        "role": "Programmer",
+        "company": "PT Sigma Cipta Caraka (Telkomsigma)",
+        "current": true,
+        "description": "Developing backend services and enterprise-grade APIs using Django REST Framework, Golang, Java Spring Boot, FastAPI, Flask, and NestJS. Implementing LLM-based AI features including intelligent chatbots, document comparison, and automated document versioning.",
+        "points": [
+          "Migrating and upgrading KPEI e-CLEARS system components using Java Spring Boot to support a modern microservices architecture and Java 17+.",
+          "Collaborating with cross-functional teams to build and improve internal and client-facing applications.",
+          "Performing data migrations to ensure smooth integration during system upgrades and new deployments.",
+          "Resolving production issues and implementing new features to improve system performance and stability.",
+          "Building internal business applications using Microsoft PowerApps to streamline internal workflows.",
+          "Applying LLM technology to develop AI features such as intelligent chatbots, document comparison, and automatic document versioning."
+        ]
+      },
+      {
+        "start": "Jan 2023",
+        "end": "Aug 2024",
+        "role": "Full-Stack Developer",
+        "company": "Freelance",
+        "description": "Developed custom web applications for clients across various industries, focusing on reliability, performance, and a great user experience.",
+        "points": [
+          "Delivered a Barbershop Queue System, a Skincare Expert System, a School E-Learning Platform, and a Travel Booking Website.",
+          "Applied modern web technologies to build reliable, easy-to-use applications that fit client needs and timelines."
+        ]
+      },
+      {
+        "start": "Feb 2023",
+        "end": "Jul 2023",
+        "role": "Software Engineer Intern",
+        "company": "Solo Technopark",
+        "description": "Contributed to digital system development and website modernization initiatives.",
+        "points": [
+          "Built an information system for Soto Panaz covering architecture design and database management.",
+          "Migrated a WordPress website to a modern stack using Next.js, Express.js, and Tailwind CSS.",
+          "Conducted functional, integration, and performance testing."
+        ]
+      }
+    ]
+  }
+}

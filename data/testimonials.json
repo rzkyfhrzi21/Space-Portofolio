@@ -1,0 +1,66 @@
+{
+  "id": {
+    "eyebrow": "Testimoni",
+    "headingLead": "Apa kata",
+    "headingAccent": "mereka.",
+    "relationLabels": {
+      "PT Sigma Cipta Caraka (Telkomsigma)": "Rekan Kerja",
+      "Owner Ecoprint Purbalingga": "Klien"
+    },
+    "items": [
+      {
+        "quote": "Working alongside Aditya on the backend team was a great experience. He writes clean, maintainable code and always takes time to explain tricky logic before we ship it. Definitely someone I'd want on my team again.",
+        "name": "Safa Muazam",
+        "initials": "SM",
+        "role": "Backend Engineer",
+        "relation": "PT Sigma Cipta Caraka (Telkomsigma)"
+      },
+      {
+        "quote": "Aditya has a solid understanding of how the database layer affects application performance, which made our collaboration smooth. He's proactive about flagging query issues early instead of leaving them for the DBA to catch.",
+        "name": "Restu Agil Arjun",
+        "initials": "RA",
+        "role": "Database Administrator",
+        "relation": "PT Sigma Cipta Caraka (Telkomsigma)"
+      },
+      {
+        "quote": "Aditya helped me understand the challenges in my business and translated them into a practical system that simplified cashier operations and financial record-keeping. The solution has made our daily workflow much more organized and efficient.",
+        "name": "Lilis Kurnia",
+        "initials": "LK",
+        "role": "Business Owner",
+        "relation": "Owner Ecoprint Purbalingga"
+      }
+    ]
+  },
+  "en": {
+    "eyebrow": "Testimonials",
+    "headingLead": "What people",
+    "headingAccent": "say.",
+    "relationLabels": {
+      "PT Sigma Cipta Caraka (Telkomsigma)": "Colleague",
+      "Owner Ecoprint Purbalingga": "Client"
+    },
+    "items": [
+      {
+        "quote": "Working alongside Aditya on the backend team was a great experience. He writes clean, maintainable code and always takes time to explain tricky logic before we ship it. Definitely someone I'd want on my team again.",
+        "name": "Safa Muazam",
+        "initials": "SM",
+        "role": "Backend Engineer",
+        "relation": "PT Sigma Cipta Caraka (Telkomsigma)"
+      },
+      {
+        "quote": "Aditya has a solid understanding of how the database layer affects application performance, which made our collaboration smooth. He's proactive about flagging query issues early instead of leaving them for the DBA to catch.",
+        "name": "Restu Agil Arjun",
+        "initials": "RA",
+        "role": "Database Administrator",
+        "relation": "PT Sigma Cipta Caraka (Telkomsigma)"
+      },
+      {
+        "quote": "Aditya helped me understand the challenges in my business and translated them into a practical system that simplified cashier operations and financial record-keeping. The solution has made our daily workflow much more organized and efficient.",
+        "name": "Lilis Kurnia",
+        "initials": "LK",
+        "role": "Business Owner",
+        "relation": "Owner Ecoprint Purbalingga"
+      }
+    ]
+  }
+}

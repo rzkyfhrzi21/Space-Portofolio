@@ -1,0 +1,30 @@
+{
+  "id": [
+    {
+      "value": "3+",
+      "label": "Tahun Pengalaman"
+    },
+    {
+      "value": "15+",
+      "label": "Proyek Selesai"
+    },
+    {
+      "value": "10+",
+      "label": "Klien yang Dilayani"
+    }
+  ],
+  "en": [
+    {
+      "value": "3+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "15+",
+      "label": "Projects Completed"
+    },
+    {
+      "value": "10+",
+      "label": "Satisfied Clients"
+    }
+  ]
+}

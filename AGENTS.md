@@ -38,12 +38,17 @@ src/
   app/               # Routes (layout, page, globals.css)
   components/        # Section components + MuxVideoBackground, ScrollRevealText, TanyaAiButton
   hooks/useContent.ts# i18n content hook
-  lib/content.ts     # Single source of truth for all site content
+  lib/content.ts     # Loader: reads data/*.json into typed SiteContent
   store/             # Redux (UI state)
   types/             # TypeScript interfaces
+data/                # Single source of truth for ALL site content (per section, ID/EN)
 public/images/       # Tech icons, project images, posters
 docs/                # Reference material (saved original site + cloning-website skill guides)
 ```
+
+## Content Editing
+
+All portfolio data (name, links, projects, experience, education, chat AI, etc.) lives in `data/*.json`, split per section and per locale (`id`/`en` keys). Edit the JSON — no Next.js code changes needed.
 
 ## Reference
 

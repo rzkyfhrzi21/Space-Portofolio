@@ -1,0 +1,56 @@
+{
+  "id": {
+    "marquee": "MEMBANGUN PRODUK DIGITAL",
+    "eyebrow": "Punya proyek?",
+    "headingLead": "Mari kita wujudkan",
+    "headingAccent": "ide-idemu.",
+    "cta": "Mari Terhubung",
+    "ctaHref": "https://wa.me/6281927070239",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/izaditya",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/adityaimamz",
+        "icon": "github"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/adityaimamz/",
+        "icon": "instagram"
+      }
+    ],
+    "status": "Terbuka untuk peluang",
+    "copyright": "© 2026 Aditya Imam Zuhdi"
+  },
+  "en": {
+    "marquee": "BUILDING DIGITAL PRODUCTS",
+    "eyebrow": "Got a project?",
+    "headingLead": "Let's bring to life",
+    "headingAccent": "your ideas.",
+    "cta": "Let's Connect",
+    "ctaHref": "https://wa.me/6281927070239",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/izaditya",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/adityaimamz",
+        "icon": "github"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/adityaimamz/",
+        "icon": "instagram"
+      }
+    ],
+    "status": "Open to opportunities",
+    "copyright": "© 2026 Aditya Imam Zuhdi"
+  }
+}

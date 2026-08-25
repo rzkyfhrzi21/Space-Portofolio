@@ -1,0 +1,40 @@
+{
+  "id": {
+    "eyebrow": "Tentang Saya",
+    "headingLead": "Engineer",
+    "headingAccent": "di balik karya.",
+    "roles": [
+      "Full-Stack Engineer",
+      "AI Systems Developer",
+      "Backend Architecture Specialist"
+    ],
+    "paragraphs": [
+      "Saya Aditya Imam Zuhdi, seorang Full-Stack Software Engineer yang berbasis di Indonesia dan saat ini bekerja di Telkomsigma. Saya mengembangkan aplikasi web dan sistem backend menggunakan teknologi seperti JavaScript, Python, Go, dan Java, serta framework seperti Next.js, Laravel, Django, dan FastAPI.",
+      "Saya senang membangun aplikasi yang membantu menyelesaikan masalah nyata, mulai dari membuat UI/UX yang nyaman digunakan hingga mengembangkan backend dan API. Saat ini saya juga terus memperdalam arsitektur backend modern dan penerapan AI untuk menciptakan produk digital yang bermanfaat."
+    ],
+    "fileName": "aditya.jpg",
+    "name": "Aditya Imam Zuhdi",
+    "role": "Programmer - Telkomsigma",
+    "available": "Tersedia",
+    "greeting": "Salam hangat,"
+  },
+  "en": {
+    "eyebrow": "About Me",
+    "headingLead": "Engineer",
+    "headingAccent": "behind the work.",
+    "roles": [
+      "Full-Stack Engineer",
+      "AI Systems Developer",
+      "Backend Architecture Specialist"
+    ],
+    "paragraphs": [
+      "I'm Aditya Imam Zuhdi, a Full-Stack Software Engineer based in Indonesia, currently working at Telkomsigma. I build web applications and backend systems using technologies such as JavaScript, Python, Go, and Java, along with frameworks like Next.js, Laravel, Django, and FastAPI.",
+      "I enjoy building applications that help solve real problems, from crafting comfortable UI/UX to developing backends and APIs. Lately I keep deepening modern backend architecture and applying AI to create digital products that are genuinely useful."
+    ],
+    "fileName": "aditya.jpg",
+    "name": "Aditya Imam Zuhdi",
+    "role": "Programmer - Telkomsigma",
+    "available": "Available",
+    "greeting": "Warm regards,"
+  }
+}

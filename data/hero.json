@@ -1,0 +1,46 @@
+{
+  "id": {
+    "eyebrow": "IT Enthusiast",
+    "name": "Aditya Imam Zuhdi",
+    "rolePrefix": "Seorang",
+    "roles": [
+      "AI Enthusiast",
+      "Builder",
+      "Full-Stack",
+      "Backend"
+    ],
+    "roleSuffix": "berbasis di Indonesia.",
+    "description": "Berpengalaman membangun aplikasi web modern, backend yang scalable, dan integrasi AI untuk produk digital.",
+    "primaryCta": {
+      "label": "Lihat Proyek",
+      "href": "#projects"
+    },
+    "secondaryCta": {
+      "label": "Hubungi saya...",
+      "href": "#contact"
+    },
+    "scroll": "Gulir"
+  },
+  "en": {
+    "eyebrow": "IT Enthusiast",
+    "name": "Aditya Imam Zuhdi",
+    "rolePrefix": "A",
+    "roles": [
+      "AI Enthusiast",
+      "Builder",
+      "Full-Stack",
+      "Backend"
+    ],
+    "roleSuffix": "based in Indonesia.",
+    "description": "Experienced in building modern web applications, scalable backends, and AI integrations for digital products.",
+    "primaryCta": {
+      "label": "See Projects",
+      "href": "#projects"
+    },
+    "secondaryCta": {
+      "label": "Reach out...",
+      "href": "#contact"
+    },
+    "scroll": "Scroll"
+  }
+}

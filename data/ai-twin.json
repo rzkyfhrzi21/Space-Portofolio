@@ -1,0 +1,56 @@
+{
+  "id": {
+    "badge": "AI Digital Twin",
+    "headingLead": "Punya pertanyaan?",
+    "headingAccent": "Tanya AI twin saya.",
+    "description": "Saya melatih AI ini berdasarkan pengalaman, proyek, dan cara kerja saya yang sebenarnya. Jawabannya nyata, bukan templated.",
+    "cta": "Mulai ngobrol sekarang",
+    "stats": [
+      {
+        "value": "24/7",
+        "label": "Selalu online"
+      },
+      {
+        "value": "RAG",
+        "label": "Berbasis pengetahuan"
+      },
+      {
+        "value": "ID / EN",
+        "label": "Bilingual"
+      }
+    ],
+    "chatName": "AI Twin Aditya",
+    "online": "Online",
+    "greeting": "Hai! Saya AI Twin Aditya. Kamu bisa bertanya tentang pengalaman, tech stack, atau proyek yang pernah ia bangun.",
+    "suggestion": "💬 Coba: \"Apa tech stack-mu?\"",
+    "placeholder": "Tanyakan sesuatu...",
+    "disclaimer": "Respons AI mungkin tidak selalu akurat. Untuk informasi resmi, silakan hubungi langsung melalui email atau bagian kontak."
+  },
+  "en": {
+    "badge": "AI Digital Twin",
+    "headingLead": "Have a question?",
+    "headingAccent": "Ask my AI twin.",
+    "description": "I trained this AI on my real experience, projects, and how I actually work. The answers are real, not templated.",
+    "cta": "Start chatting now",
+    "stats": [
+      {
+        "value": "24/7",
+        "label": "Always online"
+      },
+      {
+        "value": "RAG",
+        "label": "Knowledge-based"
+      },
+      {
+        "value": "ID / EN",
+        "label": "Bilingual"
+      }
+    ],
+    "chatName": "Aditya's AI Twin",
+    "online": "Online",
+    "greeting": "Hi! I'm Aditya's AI Twin. You can ask about my experience, tech stack, or the projects I've built.",
+    "suggestion": "💬 Try: \"What's your tech stack?\"",
+    "placeholder": "Ask me something...",
+    "disclaimer": "AI responses may not always be accurate. For official information, please reach out directly via email or the contact section."
+  }
+}
