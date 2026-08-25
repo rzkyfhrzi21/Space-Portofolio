@@ -76,7 +76,10 @@ export default function RootLayout({
       className={`dark ${geist.variable} ${geistMono.variable} ${outfit.variable} ${instrumentSerif.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full bg-bg text-text">
+      <body
+        suppressHydrationWarning
+        className="min-h-full bg-bg text-text"
+      >
         <Providers>{children}</Providers>
         <Analytics />
         <SpeedInsights />

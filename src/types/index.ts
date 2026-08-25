@@ -11,6 +11,9 @@ export interface Project {
   image: string;
   year: string;
   category: string;
+  categoryShort: string;
+  accent: string;
+  href: string;
   tags: string[];
 }
 
@@ -20,19 +23,20 @@ export interface ExperienceItem {
   role: string;
   company: string;
   current?: boolean;
+  description: string;
   points: string[];
 }
 
 export interface EducationItem {
   degree: string;
   institution: string;
-  meta: string;
+  gpaLabel: string;
+  gpa: string;
+  degreeShort: string;
   period: string;
-  badge: string;
 }
 
 export interface Certification {
-  initials: string;
   title: string;
   issuer: string;
   year: string;
@@ -44,23 +48,6 @@ export interface Article {
   readingTime: string;
   date: string;
   href?: string;
-}
-
-export interface TechItem {
-  name: string;
-  icon: string;
-}
-
-export interface TechCategory {
-  label: string;
-  count: string;
-  items: TechItem[];
-}
-
-export interface AiCapability {
-  title: string;
-  description: string;
-  tags: string[];
 }
 
 export interface Testimonial {

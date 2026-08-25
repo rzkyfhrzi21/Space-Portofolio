@@ -1,79 +1,96 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useContent } from "@/hooks/useContent";
-import { SectionHeading } from "@/components/SectionHeading";
+import { ScrollRevealText } from "@/components/ScrollRevealText";
 
 export function AboutSection() {
   const { about } = useContent();
   return (
     <section id="about" className="bg-bg py-20 md:py-32">
-      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-        <div>
-          <SectionHeading eyebrow={about.eyebrow}>
-            {about.heading}
-          </SectionHeading>
-
-          <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
-            {about.roles.map((role, i) => (
-              <span key={role} className="flex items-center gap-3">
-                {i > 0 && <span className="size-1 rounded-full bg-accent" />}
-                {role}
+      <div className="mx-auto max-w-[1200px] px-6 md:px-10 lg:px-16">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
+          <div>
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-8 bg-stroke" />
+              <span className="text-xs font-medium uppercase tracking-[0.25em] text-white/75">
+                {about.eyebrow}
               </span>
-            ))}
+            </div>
+            <h2 className="font-display text-4xl leading-[1.05] tracking-tight text-text-primary md:text-5xl lg:text-6xl">
+              {about.headingLead}{" "}
+              <span className="italic text-white/75">{about.headingAccent}</span>
+            </h2>
+            <p className="mb-8 mt-5 flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-medium uppercase tracking-[0.2em] text-white/75">
+              {about.roles.map((role, i) => (
+                <span key={role} className="inline-flex items-center gap-3">
+                  {i > 0 && (
+                    <span className="inline-block h-1 w-1 rounded-full bg-stroke" />
+                  )}
+                  {role}
+                </span>
+              ))}
+            </p>
+            <div className="h-px w-full bg-[linear-gradient(90deg,rgba(137,170,204,0.4)_0%,rgba(255,255,255,0.06)_60%,transparent_100%)]" />
+
+            <ScrollRevealText
+              paragraphs={about.paragraphs}
+              className="mt-8 space-y-5"
+            />
+
+            <div className="mt-10 border-t border-stroke pt-8">
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/75">
+                {about.greeting}
+              </p>
+              <Image
+                src="/images/about/signature.webp"
+                alt="Tanda tangan"
+                width={160}
+                height={70}
+                className="mt-3 h-14 w-auto opacity-70 invert"
+              />
+            </div>
           </div>
 
-          <div className="mt-8 h-px w-full bg-stroke" />
-
-          <div className="mt-8 space-y-6 text-base leading-relaxed text-muted md:text-lg">
-            {about.paragraphs.map((p, idx) => (
-              <motion.p
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-              >
-                {p}
-              </motion.p>
-            ))}
+          <div className="group relative mx-auto max-w-[380px] lg:mx-0 lg:ml-auto">
+            <div className="relative overflow-hidden rounded-2xl border border-stroke bg-surface">
+              <div className="flex items-center gap-2 border-b border-stroke bg-bg/60 px-4 py-3">
+                <div className="flex gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-stroke" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-stroke" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-stroke" />
+                </div>
+                <span className="ml-2 text-[10px] uppercase tracking-widest text-muted">
+                  {about.fileName}
+                </span>
+              </div>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src="/images/about/profile.webp"
+                  alt={about.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 380px"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-surface/80 to-transparent" />
+              </div>
+              <div className="flex items-center justify-between border-t border-stroke bg-bg/40 px-4 py-3">
+                <div>
+                  <p className="text-[13px] font-semibold text-text-primary">
+                    {about.name}
+                  </p>
+                  <p className="mt-0.5 text-[12px] text-muted">{about.role}</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+                  <span className="text-[11px] text-muted">{about.available}</span>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -inset-[1px] -z-10 rounded-2xl opacity-0 accent-gradient transition-opacity duration-500 group-hover:opacity-60" />
+            <div className="absolute -right-3 -top-3 -z-10 h-5 w-5 rotate-45 accent-gradient opacity-60" />
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7 }}
-          className="overflow-hidden rounded-2xl border border-stroke bg-surface"
-        >
-          <div className="flex items-center gap-2 border-b border-stroke px-4 py-3">
-            <span className="size-3 rounded-full bg-white/15" />
-            <span className="size-3 rounded-full bg-white/15" />
-            <span className="size-3 rounded-full bg-white/15" />
-            <span className="ml-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-              Aditya.jpg
-            </span>
-          </div>
-          <div className="relative aspect-[4/5] w-full">
-            <Image
-              src="/images/about/profile.webp"
-              alt="Aditya Imam Zuhdi"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent" />
-            <Image
-              src="/images/about/signature.webp"
-              alt="Signature"
-              width={160}
-              height={70}
-              className="absolute bottom-5 right-5 h-auto w-32 opacity-90 invert"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );

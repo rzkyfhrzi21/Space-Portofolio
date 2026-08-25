@@ -10,6 +10,7 @@ import { TechStackSection } from "@/components/TechStackSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { AiTwinSection } from "@/components/AiTwinSection";
 import { ContactSection } from "@/components/ContactSection";
+import { TanyaAiButton } from "@/components/TanyaAiButton";
 
 export default function Home() {
   return (
@@ -26,8 +27,9 @@ export default function Home() {
         <TechStackSection />
         <TestimonialsSection />
         <AiTwinSection />
-        <ContactSection />
-      </main>
-    </>
-  );
+          <ContactSection />
+        </main>
+        <TanyaAiButton />
+      </>
+    );
 }

@@ -3,6 +3,10 @@
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "@/components/icons";
 import { useContent } from "@/hooks/useContent";
+import { MuxVideoBackground } from "@/components/MuxVideoBackground";
+
+const CONTACT_PLAYBACK_ID = "01yW6GoUz01OTXk5w1Rt1MHkJWlCGIwj46SUONJZ4DJUE";
+const CONTACT_POSTER = "/images/contact-poster.jpg";
 
 const socialIcons = {
   linkedin: LinkedinIcon,
@@ -20,6 +24,7 @@ export function ContactSection() {
       className="relative flex min-h-[80vh] flex-col items-center justify-between overflow-hidden bg-bg pb-8 pt-16 md:pb-12 md:pt-20"
     >
       <div className="absolute inset-0 z-0">
+        <MuxVideoBackground playbackId={CONTACT_PLAYBACK_ID} poster={CONTACT_POSTER} flip />
         <div className="absolute inset-0 bg-black/25" />
         <div
           className="absolute inset-0"
@@ -44,7 +49,7 @@ export function ContactSection() {
           {[...marqueeItems, ...marqueeItems].map((text, i) => (
             <span
               key={i}
-              className="pr-8 font-display text-8xl italic tracking-tight text-text/10 md:text-[10rem] lg:text-[12rem]"
+              className="pr-8 font-display text-8xl italic tracking-tight text-text-primary/10 md:text-[10rem] lg:text-[12rem]"
             >
               {text} -
             </span>
@@ -53,13 +58,13 @@ export function ContactSection() {
       </div>
 
       <div className="relative z-10 mb-20 mt-[-10vh] flex flex-col items-center px-6 text-center md:mt-[-20vh]">
-        <div className="mb-8 text-[10px] font-semibold uppercase tracking-[0.4em] text-muted">
+        <div className="mb-8 text-[12px] font-semibold uppercase tracking-[0.25em] text-white/75">
           {contact.eyebrow}
         </div>
 
-        <h2 className="mb-10 max-w-2xl text-4xl leading-none tracking-tight text-text md:text-5xl lg:text-[5rem]">
+        <h2 className="mb-10 max-w-2xl text-4xl leading-none tracking-tight text-text-primary md:text-5xl lg:text-[5rem]">
           {contact.headingLead} <br />
-          <span className="font-display italic text-muted">
+          <span className="font-display italic text-white/75">
             {contact.headingAccent}
           </span>
         </h2>
@@ -71,7 +76,7 @@ export function ContactSection() {
           className="group relative inline-flex rounded-full p-[2px] transition-transform hover:scale-105"
         >
           <span className="absolute inset-0 rounded-full bg-white/10 transition-all duration-300 group-hover:accent-gradient" />
-          <span className="relative flex items-center gap-3 rounded-full bg-bg px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-text">
+          <span className="relative flex items-center gap-3 rounded-full bg-bg px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-text-primary">
             {contact.cta}
             <ArrowUpRight className="h-4 w-4 opacity-70" />
           </span>
@@ -89,7 +94,7 @@ export function ContactSection() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#878787]/50 transition-colors hover:text-text"
+                  className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-white/70 transition-colors hover:text-text-primary"
                 >
                   <Icon className="h-4 w-4" />
                   <span className="hidden sm:inline">{social.label}</span>
@@ -100,13 +105,13 @@ export function ContactSection() {
 
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 animate-pulse rounded-full bg-green-500/80" />
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#878787]/50">
+            <span className="text-[11px] font-semibold uppercase tracking-widest text-white/70">
               {contact.status}
             </span>
           </div>
         </div>
 
-        <div className="text-[10px] font-medium uppercase tracking-widest text-[#878787]/40">
+        <div className="text-[11px] font-medium uppercase tracking-widest text-white/60">
           {contact.copyright}
         </div>
       </div>
